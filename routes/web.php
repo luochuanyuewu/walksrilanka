@@ -17,5 +17,6 @@ Route::get('/', function () {
 
 Route::get('contact',function (){
 
-    return view('frontend.contact');
+    $contacters = App\Contacter::all();
+    return view('frontend.contacter.index',compact('contacters'));
 });

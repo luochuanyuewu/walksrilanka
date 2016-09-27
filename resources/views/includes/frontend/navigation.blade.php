@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
+    <div class="container">
         <div class="navbar-header">
 
             <a href="{{url('/')}}" class="animated"><img src="{{asset('img_frontend/siteLogo.png')}}" alt="月武博客"
@@ -12,7 +12,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li id="home" class="active"><a href="index" class="animated"><span
+                <li id="home" class="active"><a href="/" class="animated"><span
                                 class="fa fa-home"></span> 首页</a></li>
                 <li>
                     <a class="animated" href="#" data-toggle="modal" data-target="#developing"><span

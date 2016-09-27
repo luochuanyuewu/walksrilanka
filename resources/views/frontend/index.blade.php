@@ -1,5 +1,7 @@
 @extends('frontend.layout')
 
 @section('content')
-    @include('includes.sideshow')
+    <div class="container">
+        @include('includes.frontend.sideshow')
+    </div>
 @endsection

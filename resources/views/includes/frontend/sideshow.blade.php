@@ -1,5 +1,4 @@
 
-{{--<div class="container" style="margin: 50px 0px 0px 0px;">--}}
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-pause="hover" data-interval="3000" >
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -43,5 +42,4 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-{{--</div>--}}
 
