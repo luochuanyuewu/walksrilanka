@@ -13,5 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         $this->call(contacter_seeder::class);
+
+        //管理员Seeder
+        \App\User::create(['name'=>'管理员','email'=>'luochuanyuewu@qq.com','password'=>encrypt('luochuanyuewu')]);
     }
 }

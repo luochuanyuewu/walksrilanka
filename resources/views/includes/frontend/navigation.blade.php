@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-header">
 
-            <a href="{{url('/')}}" class="animated"><img src="{{asset('img_frontend/siteLogo.png')}}" alt="月武博客"
+            <a href="{{url('/')}}" class="animated"><img src="{{asset('img_frontend/siteLogo.png')}}" alt="散步斯里兰卡"
                                                          style="margin-top: 5px"></a>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                 <span class="icon-bar"></span>

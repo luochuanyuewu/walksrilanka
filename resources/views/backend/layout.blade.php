@@ -18,10 +18,20 @@
 
 </head>
 <body>
-@include('includes.frontend.navigation')
+@include('includes.backend.navigation')
 
-<div style="margin: 56px 0px 0px 0px;">
-    @yield('content')
+
+<div class="container-fluid" style="margin: 56px 0px 0px 0px;">
+    <div class="row">
+        <div class="col-md-4">
+            @include('includes.backend.leftside')
+        </div>
+        <div class="col-md-8">
+            @yield('content')
+        </div>
+
+    </div>
 </div>
+
 </body>
 </html>
