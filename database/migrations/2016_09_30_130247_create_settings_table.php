@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactersTable extends Migration
+class CreateSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateContactersTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacters', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
-//            头像文件名
-            $table->string('avatar');
-            $table->string('name')->unique();
-            $table->string('phone');
-            $table->string('wechat_id');
+            $table->string('key')->unique();
+            $table->string('value');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateContactersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacters');
+        Schema::dropIfExists('settings');
     }
 }
