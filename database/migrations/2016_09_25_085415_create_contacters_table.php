@@ -17,7 +17,7 @@ class CreateContactersTable extends Migration
             $table->increments('id');
 //            头像文件名
             $table->string('avatar');
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('phone');
             $table->string('wechat_id');
             $table->timestamps();

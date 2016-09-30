@@ -63,8 +63,8 @@ Route::group(['prefix' => 'api'], function () {
 
 //后台登陆路由
     Route::get('settings', ['as' => 'site.settings', function () {
-        $settings = \App\Setting::all()->keyBy('key');
-        return $settings->get('Site.Keywords')->value;
+        Setting::set('bar','haha');
+        return Setting::get('Site.Keywords');
     }]);
 
 
