@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         anlutro\LaravelSettings\ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
         //
 
         /*
@@ -229,6 +230,8 @@ return [
 
 
         'Setting' => 'anlutro\LaravelSettings\Facade',
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

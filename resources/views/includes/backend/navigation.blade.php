@@ -12,14 +12,14 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li id="home" class="active"><a href="/" class="animated"><span
-                                class="fa fa-home"></span> 首页</a></li>
+                                class="fa fa-home"></span>Main Site</a></li>
                 <li>
                     <a class="animated" href="#" data-toggle="modal" data-target="#developing"><span
-                                class="fa fa-gamepad"></span> 旅游套餐</a>
+                                class="fa fa-gamepad"></span>Custom Plan</a>
                 </li>
                 <li>
                     <a class="animated" href="#" data-toggle="modal" data-target="#developing"><span
-                                class="fa fa-picture-o"></span> 旅游景点</a>
+                                class="fa fa-picture-o"></span>Place To Go</a>
                 </li>
 
                 <li class="dropdown">

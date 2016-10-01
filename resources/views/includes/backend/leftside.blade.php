@@ -22,8 +22,9 @@
         </div>
         <div id="collapse2" class="panel-collapse collapse in">
             <ul class="list-group">
-                <li class="list-group-item"><a href="#" class="animated">查看所有联系人</a></li>
-                <li class="list-group-item"><a href="#" class="animated">创建新联系人</a></li>
+                <li class="list-group-item"><a href="{{route('contacter.index')}}" class="animated">查看所有联系人</a></li>
+                <li class="list-group-item"><a href="{{route('contacter.create')}}" class="animated">创建新联系人</a></li>
+
             </ul>
         </div>
     </div>
@@ -39,6 +40,21 @@
             <ul class="list-group">
                 <li class="list-group-item"><a href="#" class="animated"><span class="fa fa-home"></span> 查看所有旅游景点</a></li>
                 <li class="list-group-item"><a href="#" class="animated"><span class="fa fa-home"></span> 创建新旅游景点</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapse4">
+                    套餐</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse in">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#" class="animated"><span class="fa fa-home"></span> 所有套餐</a></li>
+                <li class="list-group-item"><a href="#" class="animated"><span class="fa fa-home"></span> 编辑套餐</a></li>
             </ul>
         </div>
     </div>

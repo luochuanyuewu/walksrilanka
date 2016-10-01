@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,11 @@ use Illuminate\Support\Facades\Session;
 
 class BackendLoginController extends Controller
 {
-
+    //显示用户登录界面
+    public function Index()
+    {
+        return view('backend.login');
+    }
     //处理用户登陆
     public function Login(Request $request){
         $input = $request->all();

@@ -16,6 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Setting_Seeder::class);
 
         //管理员Seeder
-        \App\User::create(['name'=>'管理员','email'=>'luochuanyuewu@qq.com','password'=>encrypt('luochuanyuewu')]);
+        \App\User::create(['name'=>'Hi!Manager','email'=>'luochuanyuewu@qq.com','password'=>encrypt('luochuanyuewu')]);
     }
 }
