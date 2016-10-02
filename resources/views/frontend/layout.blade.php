@@ -19,7 +19,9 @@
 </head>
 <body>
 @include('includes.frontend.navigation')
-<div style="margin: 56px 0px 0px 0px;">
+@include('includes.frontend.sideshow')
+
+<div>
     @yield('content')
 </div>
 </body>

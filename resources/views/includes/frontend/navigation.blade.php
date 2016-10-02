@@ -1,5 +1,5 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+<nav class="navbar navbar-default" style="margin-bottom: 0px">
+    <div class="container-fluid">
         <div class="navbar-header">
 
             <a href="{{url('/')}}" class="animated"><img src="{{asset('img_frontend/siteLogo.png')}}" alt="散步斯里兰卡"
