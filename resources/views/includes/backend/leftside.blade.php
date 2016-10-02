@@ -6,7 +6,7 @@
                     套餐</a>
             </h4>
         </div>
-        <div id="collapse1" class="panel-collapse collapse in">
+        <div id="collapse1" class="panel-collapse collapse">
             <ul class="list-group">
                 <li class="list-group-item"><a href="#" class="animated">查看所有套餐</a></li>
                 <li class="list-group-item"><a href="#" class="animated">创建新套餐</a></li>
@@ -20,7 +20,7 @@
                     联系人</a>
             </h4>
         </div>
-        <div id="collapse2" class="panel-collapse collapse in">
+        <div id="collapse2" class="panel-collapse collapse ">
             <ul class="list-group">
                 <li class="list-group-item"><a href="{{route('contacter.index')}}" class="animated">查看所有联系人</a></li>
                 <li class="list-group-item"><a href="{{route('contacter.create')}}" class="animated">创建新联系人</a></li>
@@ -36,7 +36,7 @@
                     旅游景点</a>
             </h4>
         </div>
-        <div id="collapse3" class="panel-collapse collapse in">
+        <div id="collapse3" class="panel-collapse collapse ">
             <ul class="list-group">
                 <li class="list-group-item"><a href="#" class="animated"><span class="fa fa-home"></span> 查看所有旅游景点</a></li>
                 <li class="list-group-item"><a href="#" class="animated"><span class="fa fa-home"></span> 创建新旅游景点</a></li>
@@ -51,7 +51,7 @@
                     套餐</a>
             </h4>
         </div>
-        <div id="collapse4" class="panel-collapse collapse in">
+        <div id="collapse4" class="panel-collapse collapse ">
             <ul class="list-group">
                 <li class="list-group-item"><a href="#" class="animated"><span class="fa fa-home"></span> 所有套餐</a></li>
                 <li class="list-group-item"><a href="#" class="animated"><span class="fa fa-home"></span> 编辑套餐</a></li>

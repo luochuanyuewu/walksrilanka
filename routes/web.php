@@ -26,6 +26,26 @@ Route::group([], function () {
     }]);
 
 
+    Route::get('places',['as' =>'frontend.places',function(){
+        $places = \App\Category::find(1)->articles;
+        return view('frontend.srilanka.place.index',compact('places'));
+    }]);
+
+    Route::get('activities',['as' =>'frontend.activities',function(){
+        $activities = \App\Category::find(2)->articles;
+        return view('frontend.srilanka.activity.index',compact('activities'));
+    }]);
+    Route::get('travelinfo',['as' =>'frontend.travelinfo',function(){
+        $infos = \App\Category::find(3)->articles;
+        return view('frontend.srilanka.travel_info.index',compact('infos'));
+    }]);
+    Route::get('foods',['as' =>'frontend.foods',function(){
+        $foods = \App\Category::find(4)->articles;
+        return view('frontend.srilanka.food.index',compact('foods'));
+    }]);
+
+
+
 });
 
 
@@ -42,6 +62,9 @@ Route::group(['prefix' => 'backend', 'namespace' => 'Backend', 'middleware' => [
 
     //联系人资源
     Route::resource('contacter', 'ContacterController');
+
+    //文章资源
+    Route::resource('article', 'ArticleController');
 
 
 });

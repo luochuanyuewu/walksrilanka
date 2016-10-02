@@ -19,11 +19,11 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">斯里兰卡
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">介绍斯里兰卡</a></li>
-                        <li><a href="#">流行的目的地</a></li>
-                        <li><a href="#">有趣的项目</a></li>
-                        <li><a href="#">有趣的旅游信息</a></li>
-                        <li><a href="#">丰富的饮食</a></li>
+                        {{--<li><a href="#">介绍斯里兰卡</a></li>--}}
+                        <li><a href="{{url('places')}}">流行的目的地</a></li>
+                        <li><a href="{{url('activities')}}">有趣的项目</a></li>
+                        <li><a href="{{url('travelinfo')}}">有趣的旅游信息</a></li>
+                        <li><a href="{{url('foods')}}">丰富的饮食</a></li>
                     </ul>
                 </li>
 

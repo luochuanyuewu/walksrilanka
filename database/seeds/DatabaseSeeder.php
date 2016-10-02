@@ -14,6 +14,9 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $this->call(Contacter_Seeder::class);
         $this->call(Setting_Seeder::class);
+        $this->call(Category_Seeder::class);
+        $this->call(Article_Seeder::class);
+
 
         //管理员Seeder
         \App\User::create(['name'=>'Hi!Manager','email'=>'luochuanyuewu@qq.com','password'=>encrypt('luochuanyuewu')]);
