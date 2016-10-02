@@ -24,5 +24,9 @@
 <div>
     @yield('content')
 </div>
+
+<footer class="text-center" style="background-color: black">
+    2016~至今 散步斯里兰卡 | 版权所有
+</footer>
 </body>
 </html>
