@@ -8,8 +8,8 @@
     <title>散步斯里兰卡</title>
 
     <meta name="description"
-          content="准备体验生活中最大的乐趣 ？ 好奇，奇迹 ，名胜古迹，美丽的风景，顽皮的海浪，不同的气候，天气 品尝的特色等等。在这里你什么都能看到。欢迎大家随时光临斯里兰卡。我们希望给你们带来美好的生活体验。"/>
-    <meta name="keywords" content="sanbusililanka, 旅游, 斯里兰卡, 散步, 旅行社, 美丽的地方, travel sri lanka, 锡兰, 旅游/斯里兰卡, 宾馆, 风景, "/>
+          content="{{Setting::get('Site.Description','Site Description')}}"/>
+    <meta name="keywords" content="{{Setting::get('Site.Keywords','Site Keywords')}}"/>
 
 
     <link rel="stylesheet" href="{{url('css/app.css')}}">
@@ -21,16 +21,20 @@
 @include('includes.backend.navigation')
 
 
-<div class="container-fluid" style="margin: 56px 0px 0px 0px;">
-    <div class="row">
-        <div class="col-md-4">
-            @include('includes.backend.leftside')
-        </div>
-        <div class="col-md-8">
-            @yield('content')
-        </div>
+{{--<div class="container" style="margin: 56px 0px 0px 0px;">--}}
+    {{--<div class="row">--}}
+        {{--<div class="col-md-4">--}}
+            {{--@include('includes.backend.leftside')--}}
+        {{--</div>--}}
+        {{--<div class="col-md-12">--}}
+            {{--@yield('content')--}}
+        {{--</div>--}}
 
-    </div>
+    {{--</div>--}}
+{{--</div>--}}
+
+<div class="container">
+    @yield('content')
 </div>
 
 </body>

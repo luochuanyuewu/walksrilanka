@@ -24,8 +24,8 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('picture','选择图片:') !!}
-                        {!! Form::file('picture',['class'=>'form-control']) !!}
+                        {!! Form::label('picture_id','选择图片:') !!}
+                        {!! Form::file('picture_id',['class'=>'form-control']) !!}
                     </div>
 
                     <div class="form-group">

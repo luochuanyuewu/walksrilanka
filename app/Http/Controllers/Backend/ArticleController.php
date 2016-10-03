@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Article;
 use App\Category;
+use App\Picture;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,7 +20,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('backend.article.index');
+        $categories = Category::all();
+        $articles = Article::latest()->get();
+        return view('backend.article.index',compact('articles','categories'));
     }
 
     /**
@@ -31,7 +34,6 @@ class ArticleController extends Controller
     {
 
         $categories = Category::pluck('name', 'id')->all();
-//        return $categories[1];
         return view('backend.article.create',compact('categories'));
 
     }
@@ -45,33 +47,30 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+//        return $input;
         //如果有文件存在,则处理文件
-        if ($file = $request->file('picture')) {
+        if ($file = $request->file('picture_id')) {
 
-            //设置文件名
-            $name = $file->getClientOriginalName();
-
-            $input['picture'] = $name;
-
+            $name = time() . $file->getClientOriginalName();
             //移动图片,如果无法移动,就把文件名编码后再移动
             try {
-
-                $file->move('images/articles/', $name);
-
+                $file->move('images/articles', $name);
             } catch (FileException $e) {
-
                 $encodedName = iconv('utf-8', 'gbk', $name);
-
-                $file->move('images/articles/', $encodedName);
-
+                $file->move('images/articles', $encodedName);
             }
+            $picture = Picture::create(['name' => $name,'category_id'=>0]);
+            $input['picture_id'] = $picture->id;
+
+            $article = Article::create($input);
+            $picture->update(['article_id'=>$article->id]);
         }
 
-        Article::create($input);
-
+        //flash类型的Session只会出现一次就失效
         Session::flash('created_article', 'Create article successfull!');
 
         return redirect(route('article.index'));
+
     }
 
     /**
@@ -82,7 +81,9 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $categories = Category::all();
+        $articles = Article::where('category_id',$id)->get();
+        return view('backend.article.index',compact('articles','categories'));
     }
 
     /**

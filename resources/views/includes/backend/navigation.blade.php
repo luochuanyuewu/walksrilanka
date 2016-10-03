@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default" style="margin-bottom: 5px">
     <div class="container">
         <div class="navbar-header">
 
@@ -23,19 +23,19 @@
                 </li>
 
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Package
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Articles
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">View Packages</a></li>
-                        <li><a href="#">Create New Packages</a></li>
+                        <li><a href="{{route('article.index')}}">View Ariciles</a></li>
+                        <li><a href="{{route('article.create')}}">Create New Article</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contacter
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">View Contacters</a></li>
-                        <li><a href="#">Create New Contacters</a></li>
+                        <li><a href="{{route('contacter.index')}}">View Contacters</a></li>
+                        <li><a href="{{route('contacter.create')}}">Create New Contacters</a></li>
                     </ul>
                 </li>
 

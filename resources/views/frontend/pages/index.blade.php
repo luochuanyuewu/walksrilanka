@@ -2,25 +2,22 @@
 @section('content')
 
     <div class="text-center">
-        <h2>美食</h2>
-        <p>你可以查阅所有美食</p>
+        <h2>{{$page_title}}</h2>
+        <p>{{$page_description}}</p>
     </div>
 
     <div class="panel-group">
         <div class="row">
-            @foreach($foods as $food)
+            @foreach($articles as $article)
                 <div class="col-md-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-body">
-                            @if($food->picture != '')
-                                <img src="{{url($food->picture)}}" alt="">
-                            @endif
-                            <h3>{{$food->title}}</h3>
-                            <p>{{$food->content}}</p>
+                            <img src="{{url($article->storepath . $article->picture->name)}}" alt="">
+                            <h3>{{$article->title}}</h3>
+                            {!! $article->content !!}
                         </div>
                     </div>
                 </div>
-
             @endforeach
         </div>
 
