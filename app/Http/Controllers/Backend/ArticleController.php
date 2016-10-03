@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class ArticleController extends Controller
 {
@@ -18,7 +19,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.article.index');
     }
 
     /**
@@ -28,7 +29,11 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+
+        $categories = Category::pluck('name', 'id')->all();
+//        return $categories[1];
+        return view('backend.article.create',compact('categories'));
+
     }
 
     /**
@@ -39,7 +44,34 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        //如果有文件存在,则处理文件
+        if ($file = $request->file('picture')) {
+
+            //设置文件名
+            $name = $file->getClientOriginalName();
+
+            $input['picture'] = $name;
+
+            //移动图片,如果无法移动,就把文件名编码后再移动
+            try {
+
+                $file->move('images/articles/', $name);
+
+            } catch (FileException $e) {
+
+                $encodedName = iconv('utf-8', 'gbk', $name);
+
+                $file->move('images/articles/', $encodedName);
+
+            }
+        }
+
+        Article::create($input);
+
+        Session::flash('created_article', 'Create article successfull!');
+
+        return redirect(route('article.index'));
     }
 
     /**

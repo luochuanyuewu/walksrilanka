@@ -168,6 +168,7 @@ return [
          */
         anlutro\LaravelSettings\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
         //
 
         /*

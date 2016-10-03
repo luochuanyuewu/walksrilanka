@@ -40,6 +40,15 @@
                 </li>
 
                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Articles
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{route('article.index')}}">View Articles</a></li>
+                        <li><a href="{{route('article.create')}}">Create New Articles</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{session('username')}}
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">

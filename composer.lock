@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ba1dec2c9198afed64b1ee9863cd2e95",
-    "content-hash": "c57d883ef87f2db7b6dc2afab5056142",
+    "hash": "849d9d3478369edc66073882a6a1f5ed",
+    "content-hash": "f3bd193e2c68f327381d93ca8e056b6c",
     "packages": [
         {
             "name": "anlutro/l4-settings",
@@ -1915,6 +1915,60 @@
                 "dump"
             ],
             "time": "2016-08-31 09:05:42"
+        },
+        {
+            "name": "unisharp/laravel-ckeditor",
+            "version": "4.5.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UniSharp/laravel-ckeditor.git",
+                "reference": "cc9a5505dc3c3a060944aa8b5ce13515547263ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/UniSharp/laravel-ckeditor/cc9a5505dc3c3a060944aa8b5ce13515547263ec.zip",
+                "reference": "cc9a5505dc3c3a060944aa8b5ce13515547263ec",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Unisharp\\Ckeditor\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+",
+                "LGPL-2.1+",
+                "MPL-1.1+"
+            ],
+            "authors": [
+                {
+                    "name": "CKSource",
+                    "homepage": "http://cksource.com"
+                },
+                {
+                    "name": "UniSharp Ltd. (Composer Package Maintainer)",
+                    "homepage": "http://www.unisharp.com"
+                }
+            ],
+            "description": "JavaScript WYSIWYG web text editor (for laravel).",
+            "homepage": "http://ckeditor.com",
+            "keywords": [
+                "CKEditor",
+                "editor",
+                "fckeditor",
+                "html",
+                "javascript",
+                "laravel",
+                "richtext",
+                "text",
+                "wysiwyg"
+            ],
+            "time": "2016-02-16 05:56:20"
         },
         {
             "name": "vlucas/phpdotenv",
