@@ -27,23 +27,11 @@
                     </ul>
                 </li>
 
-                <li id="home" class="active"><a href="packages"><span
+                <li><a href="{{url('packages')}}"><span
                                 class="fa fa-home"></span>旅游套餐</a>
                 </li>
 
-                {{--<li class="dropdown">--}}
-                    {{--<a class="dropdown-toggle" data-toggle="dropdown" href="{{url('packages')}}">旅游套餐--}}
-                        {{--<span class="caret"></span></a>--}}
-                    {{--<ul class="dropdown-menu">--}}
-                        {{--<li><a href="#">Classic Mini Tour</a></li>--}}
-                        {{--<li><a href="#">Best of Sri Lanka</a></li>--}}
-                        {{--<li><a href="#">Cultural Heritage Tour</a></li>--}}
-                        {{--<li><a href="#">Scenic Sri Lanka</a></li>--}}
-                        {{--<li><a href="#">Ultimate Sri Lanka</a></li>--}}
-                    {{--</ul>--}}
-                {{--</li>--}}
-
-                <li id="liuyan"><a href="{{url('contacters')}}" class="animated"><span
+                <li><a href="{{url('contacters')}}" class="animated"><span
                                 class="fa fa-fire"></span> 联系我们</a></li>
 
             </ul>

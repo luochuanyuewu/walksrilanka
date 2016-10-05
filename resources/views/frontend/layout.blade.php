@@ -18,8 +18,8 @@
 
 </head>
 <body>
-@include('includes.frontend.navigation')
-@include('includes.frontend.sideshow')
+@include('frontend.navigation')
+@include('frontend.sideshow')
 
 <div>
     @yield('content')

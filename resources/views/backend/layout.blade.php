@@ -18,20 +18,7 @@
 
 </head>
 <body>
-@include('includes.backend.navigation')
-
-
-{{--<div class="container" style="margin: 56px 0px 0px 0px;">--}}
-    {{--<div class="row">--}}
-        {{--<div class="col-md-4">--}}
-            {{--@include('includes.backend.leftside')--}}
-        {{--</div>--}}
-        {{--<div class="col-md-12">--}}
-            {{--@yield('content')--}}
-        {{--</div>--}}
-
-    {{--</div>--}}
-{{--</div>--}}
+@include('backend.navigation')
 
 <div class="container">
     @yield('content')

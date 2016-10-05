@@ -12,6 +12,11 @@
                     {{csrf_field()}}
 
                     <div class="form-group">
+                        {!! Form::label('thumbnail','Thumbnail:') !!}
+                        {!! Form::file('thumbnail',['class'=>'form-control']) !!}
+                    </div>
+
+                    <div class="form-group">
                         {!! Form::label('title','Title:') !!}
                         {!! Form::text('title',null,['class'=>'form-control']) !!}
                     </div>
@@ -23,13 +28,9 @@
                         {!! Form::textarea('content',null,['class'=>'form-control','id'=>'article-ckeditor','rows'=>10]) !!}
                     </div>
 
-                    <div class="form-group">
-                        {!! Form::label('thumbnail','缩略图:') !!}
-                        {!! Form::file('thumbnail',['class'=>'form-control']) !!}
-                    </div>
 
                     <div class="form-group">
-                        {!! Form::label('category_id','分类:') !!}
+                        {!! Form::label('category_id','Category:') !!}
                         {!! Form::select('category_id',[''=>'Choose a category'] + $categories,null,['class'=>'form-control']) !!}
                     </div>
 
@@ -48,6 +49,6 @@
 
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace( 'article-ckeditor' );
+        CKEDITOR.replace('article-ckeditor');
     </script>
 @endsection
