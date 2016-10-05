@@ -65,7 +65,8 @@ class PageController extends Controller
     public function ArticleShow($id)
     {
         $article = Article::find($id);
-        return view('frontend.pages.show',compact('article'));
+        $pictures = $article->pictures;
+        return view('frontend.pages.show',compact('article','pictures'));
     }
 
     public function ContacterIndex()

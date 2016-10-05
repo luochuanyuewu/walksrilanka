@@ -7,6 +7,12 @@
         </div>
     @endif
 
+    @if(Session::has('uploaded_pictures'))
+        <div class="row">
+            <p class="bg-danger">{{session('uploaded_pictures')}}</p>
+        </div>
+    @endif
+
     <div class="row text-center">
         <div class="btn-group btn-group-justified">
             @foreach($categories as $category)
@@ -29,7 +35,9 @@
                                 标题:{{$article->title}}</li>
                         @endforeach
                     @else
-                        <li class="list-group-item">NO Article To Show, <a href="{{route('article.create')}}">Click me</a>to create a new article. </li>
+                        <li class="list-group-item">NO Article To Show, <a href="{{route('article.create')}}">Click
+                                me</a>to create a new article.
+                        </li>
                     @endif
 
                 </ul>

@@ -14,7 +14,7 @@
                         <div class="panel-body">
                             <a href="{{url('show/' . $article->id)}}"><img src="{{url($article->thumbnail->name)}}" width="400" height="300"></a>
                             <h3>{{$article->title}}</h3>
-                            {!! $article->content !!}
+                            {{--{!! $article->content !!}--}}
                         </div>
                     </div>
                 </div>

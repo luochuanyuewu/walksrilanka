@@ -15,15 +15,19 @@
     <link rel="stylesheet" href="{{url('css/app.css')}}">
 
     <script src="{{url('js/app.js')}}"></script>
-
+    <style>
+        .article-carousel-inner > .item > img,
+        .article-carousel-inner > .item > a > img {
+            width: 60%;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
 @include('frontend.navigation')
 @include('frontend.sideshow')
 
-<div>
-    @yield('content')
-</div>
+@yield('content')
 
 <footer class="text-center" style="background-color: black">
     2016~至今 散步斯里兰卡 | 版权所有

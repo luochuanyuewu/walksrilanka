@@ -1,5 +1,6 @@
 @extends('backend.layout')
 @section('content')
+
     <div class="row">
         <div class="">
             <div class="panel panel-info">
@@ -21,13 +22,11 @@
                         {!! Form::text('title',null,['class'=>'form-control']) !!}
                     </div>
 
-
                     <div class="form-group">
                         {!! Form::label('content','Content:') !!}
                         {{--第二个参数是默认内容--}}
-                        {!! Form::textarea('content',null,['class'=>'form-control','id'=>'article-ckeditor','rows'=>10]) !!}
+                        {!! Form::textarea('content',null,['class'=>'form-control','id'=>'article-ckeditor']) !!}
                     </div>
-
 
                     <div class="form-group">
                         {!! Form::label('category_id','Category:') !!}
@@ -44,6 +43,16 @@
             </div>
         </div>
 
+    </div>
+
+    <div class="row alert alert-danger">
+        <ul>
+            <li>You can drag lower-right corner of the text editor to resize.</li>
+
+            <li>Thumbnail (has to be image) file szie will be lower than 512kb,min thumbnail size is 400*300, max
+                thumbnail size is 800*600.
+            </li>
+        </ul>
     </div>
 
 

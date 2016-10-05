@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Article;
 use App\Category;
 use App\Picture;
+use App\Thumbnail;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -22,7 +23,7 @@ class ArticleController extends Controller
     {
         $categories = Category::all();
         $articles = Article::latest()->get();
-        return view('backend.article.index',compact('articles','categories'));
+        return view('backend.article.index', compact('articles', 'categories'));
     }
 
     /**
@@ -34,37 +35,69 @@ class ArticleController extends Controller
     {
 
         $categories = Category::pluck('name', 'id')->all();
-        return view('backend.article.create',compact('categories'));
+        return view('backend.article.create', compact('categories'));
 
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-//        return $input;
-        //如果有文件存在,则处理文件
-        if ($file = $request->file('picture_id')) {
+        $this->validate($request, [
+            'thumbnail' => 'bail|required|image|dimensions:min_width=400,min_height=300,max_width=800,max_height=600|max:512',
+            'title' => 'required|max:255',
+            'content' => 'required',
+            'category_id' => 'required',
+        ]);
 
-            $name = time() . $file->getClientOriginalName();
-            //移动图片,如果无法移动,就把文件名编码后再移动
+        $input = $request->except('pictures', 'thumbnail');
+
+        $article = Article::create($input);
+
+//        return $article;
+        #region 处理缩略图
+        if ($file_thumbnail = $request->file('thumbnail')) {
+            $name_thumbnail = time() . $file_thumbnail->getClientOriginalName();
+
             try {
-                $file->move('images/articles', $name);
+                $file_thumbnail->move('images/thumbnails', $name_thumbnail);
             } catch (FileException $e) {
-                $encodedName = iconv('utf-8', 'gbk', $name);
-                $file->move('images/articles', $encodedName);
+                $encodedName = iconv('utf-8', 'gbk', $name_thumbnail);
+                $file_thumbnail->move('images/thumbnails', $encodedName);
             }
-            $picture = Picture::create(['name' => $name,'category_id'=>0]);
-            $input['picture_id'] = $picture->id;
-
-            $article = Article::create($input);
-            $picture->update(['article_id'=>$article->id]);
+            Thumbnail::create(['name' => $name_thumbnail, 'article_id' => $article->id]);
         }
+        #endregion
+
+        #region 处理图片
+//        if ($files_picture = $request->file('pictures')) {
+//            // Making counting of uploaded images
+//            $file_count = count($files_picture);
+//            // start count how many uploaded
+//            $uploadcount = 0;
+//            foreach ($files_picture as $file_picture) {
+//                $rules = ['file' => 'bail|required|image|dimensions:min_width=400,min_height=300,max_width=800,max_height=600|max:512'];
+//                $validator = Validator::make(['file' => $file_picture], $rules);
+//                if ($validator->passes()) {
+//                    $destinationPath = 'images/articles';
+//                    $filename = time() . $file_picture->getClientOriginalName();
+//                    $file_picture->move($destinationPath, $filename);
+//                    Picture::create(['name'=>$filename,'article_id'=>$article->id]);
+//                    $uploadcount++;
+//                }
+//            }
+//            if ($uploadcount == $file_count) {
+//                Session::flash('uploaded_pictures', 'Upload multiple pictures successfully');
+//            } else {
+//
+//                return redirect(route('article.index'))->withInput()->withErrors($validator);
+//            }
+//        }
+        #endregion
 
         //flash类型的Session只会出现一次就失效
         Session::flash('created_article', 'Create article successfull!');
@@ -76,35 +109,34 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $categories = Category::all();
-        $articles = Article::where('category_id',$id)->get();
-        return view('backend.article.index',compact('articles','categories'));
+        $articles = Article::where('category_id', $id)->get();
+        return view('backend.article.index', compact('articles', 'categories'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $note = Article::find($id);
-        $categories = Category::lists('name', 'id')->all();
-//        return $note;
-        return view('notes.edit', compact('note', 'categories'));
+        $article = Article::find($id);
+        $categories = Category::pluck('name', 'id')->all();
+        return view('backend.article.edit', compact('article', 'categories'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -115,7 +147,7 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

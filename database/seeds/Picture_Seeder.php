@@ -14,8 +14,8 @@ class Picture_Seeder extends Seeder
     {
         //给50个文章每个创建4个图片
         for ($i = 1; $i <= 50; $i++) {
-            for ($j = 1; $j <= 4; $j++) {
-                Picture::create(['name' => 'placeholder.jpg', 'article_id' => $i]);
+            for ($j = 1; $j <= 3; $j++) {
+                Picture::create(['name' => $j . '.jpg', 'article_id' => $i]);
             }
         }
 
