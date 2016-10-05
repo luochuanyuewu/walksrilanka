@@ -16,5 +16,7 @@ class Contacter_Seeder extends Seeder
         Contacter::create(['name'=>'啊酷','avatar'=>'braz.jpg','phone'=>'无','wechat_id'=>'brazz1991']);
         Contacter::create(['name'=>'夏溪','avatar'=>'sasi.jpg','phone'=>'无','wechat_id'=>'sasi1992620']);
         Contacter::create(['name'=>'大宋','avatar'=>'bos.jpg','phone'=>'无','wechat_id'=>'Srilankadasun']);
+        Contacter::create(['name'=>'刘金生','avatar'=>'kinson.jpg','phone'=>'15330341148','wechat_id'=>'luochuanyuewu']);
+
     }
 }

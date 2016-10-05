@@ -9,12 +9,9 @@ class Category extends Model
     protected $table = 'categories';
     protected $fillable = ['name','display_name'];
 
-    /**
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
+    //返回该分类下的所有文章
     public function articles()
     {
-        return $this->hasMany('App\Article');
+        return $this->hasMany('App\Article','category_id','id');
     }
 }

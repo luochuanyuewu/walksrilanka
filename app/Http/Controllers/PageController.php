@@ -62,7 +62,7 @@ class PageController extends Controller
 
 
     //显示单一的一个文章
-    public function ArticlesShow($id)
+    public function ArticleShow($id)
     {
         $article = Article::find($id);
         return view('frontend.pages.show',compact('article'));

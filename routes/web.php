@@ -27,6 +27,7 @@ Route::get('foods', ['as' => 'frontend.foods', 'uses' => 'PageController@FoodInd
 
 Route::get('infos', ['as' => 'frontend.infos', 'uses' => 'PageController@InfoIndex']);
 
+Route::get('show/{id}',['as'=>'frontend.show','uses'=>'PageController@ArticleShow']);
 
 
 //需要登录后才能访问的界面

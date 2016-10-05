@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactersTable extends Migration
+class CreateThumbnailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateContactersTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacters', function (Blueprint $table) {
+        Schema::create('thumbnails', function (Blueprint $table) {
             $table->increments('id');
-            //头像文件名
-            $table->string('avatar');
+//          缩略图路径
             $table->string('name');
-            $table->string('phone');
-            $table->string('wechat_id');
+//          指定该缩略图属于哪个文章
+            $table->integer('article_id');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateContactersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacters');
+        Schema::dropIfExists('thumbnails');
     }
 }

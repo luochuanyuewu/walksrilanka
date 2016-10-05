@@ -12,29 +12,29 @@
                     {{csrf_field()}}
 
                     <div class="form-group">
-                        {!! Form::label('title','标题:') !!}
+                        {!! Form::label('title','Title:') !!}
                         {!! Form::text('title',null,['class'=>'form-control']) !!}
                     </div>
 
 
                     <div class="form-group">
-                        {!! Form::label('content','内容:') !!}
+                        {!! Form::label('content','Content:') !!}
                         {{--第二个参数是默认内容--}}
                         {!! Form::textarea('content',null,['class'=>'form-control','id'=>'article-ckeditor','rows'=>10]) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('picture_id','选择图片:') !!}
-                        {!! Form::file('picture_id',['class'=>'form-control']) !!}
+                        {!! Form::label('thumbnail','缩略图:') !!}
+                        {!! Form::file('thumbnail',['class'=>'form-control']) !!}
                     </div>
 
                     <div class="form-group">
                         {!! Form::label('category_id','分类:') !!}
-                        {!! Form::select('category_id',[''=>'选择一个分类'] + $categories,null,['class'=>'form-control']) !!}
+                        {!! Form::select('category_id',[''=>'Choose a category'] + $categories,null,['class'=>'form-control']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::submit('创建文章',['class'=>'btn btn-info btn-block']) !!}
+                        {!! Form::submit('Create Article',['class'=>'btn btn-info btn-block']) !!}
                     </div>
 
                     {!! Form::close() !!}

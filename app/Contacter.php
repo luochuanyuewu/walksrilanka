@@ -10,11 +10,11 @@ class Contacter extends Model
 
     protected $fillable = ['name','avatar','phone','wechat_id'];
 
-//    联系人头像的存储路径
-    public $storepath = '/images/contacters/';
+    //联系人头像的存储路径
+    public $store_path = '/images/contacters/';
 
     public function  getAvatarAttribute($avatar)
     {
-        return $this->storepath . $avatar;
+        return $this->store_path . $avatar;
     }
 }

@@ -24,7 +24,7 @@
 
                         @foreach($articles as $article)
                             <li class="list-group-item"><a href="#"><img
-                                            src="{{url($article->storepath . $article->picture->name)}}"
+                                            src="{{url($article->thumbnail->name)}}"
                                             class=" img-responsive img-rounded" width="100" height="100"></a>
                                 标题:{{$article->title}}</li>
                         @endforeach

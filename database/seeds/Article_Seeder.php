@@ -1,6 +1,7 @@
 <?php
 
 use App\Article;
+use App\Category;
 use Illuminate\Database\Seeder;
 
 class Article_Seeder extends Seeder
@@ -12,7 +13,12 @@ class Article_Seeder extends Seeder
      */
     public function run()
     {
-        //地方
-        Article::create(['title'=>'TestArticle','content'=>'TestContentTestContent','category_id'=>2,'picture_id'=>1]);
+
+        //给5个分类分别创建10个文章
+        for ($i = 1; $i <= 5; $i++) {
+            for ($j = 1; $j <= 10; $j++) {
+                Article::create(['title'=>'Title_Cate_' . $i,'content'=>'Content_Cate_' . $i,'category_id'=>$i]);
+            }
+        }
     }
 }

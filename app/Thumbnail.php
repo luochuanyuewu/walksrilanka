@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Picture extends Model
+class Thumbnail extends Model
 {
-    protected $table = 'pictures';
+    protected $table = 'thumbnails';
     protected $fillable = ['name','article_id'];
 
-    //联系人头像的存储路径
-    public $store_path = '/images/articles/';
+    //缩略图的存储路径
+    public $store_path = 'images/thumbnails/';
 
     public function  getNameAttribute($name)
     {
@@ -23,5 +23,4 @@ class Picture extends Model
     {
         return $this->belongsTo('App\Article','article_id','id');
     }
-
 }

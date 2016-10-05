@@ -12,7 +12,7 @@
                 <div class="col-md-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-body">
-                            <img src="{{url($article->storepath . $article->picture->name)}}" alt="">
+                            <a href="{{url('show/' . $article->id)}}"><img src="{{url($article->thumbnail->name)}}" width="400" height="300"></a>
                             <h3>{{$article->title}}</h3>
                             {!! $article->content !!}
                         </div>
