@@ -20,11 +20,12 @@
                 <ul class="list-group">
                     @foreach($contacters as $contacter)
 
-                        <li class="list-group-item"><a href="{{route('contacter.edit',['id'=>$contacter->id])}}"><img
+                        <li class="list-group-item col-md-6"><a href="{{route('contacter.edit',['id'=>$contacter->id])}}"><img
                                         src="{{url($contacter->avatar) }}"
                                         class=" img-responsive img-rounded" width="100" height="100"></a>
-                            姓名:{{$contacter->name}} ,手机号:{{$contacter->phone}},
-                            微信ID:{{$contacter->wechat_id}}</li>
+                            姓名:{{$contacter->name}}, 手机号:{{$contacter->phone}}, 微信ID:{{$contacter->wechat_id}},
+                            Created_at:{{$contacter->created_at->format('Y-m-d') }},
+                            Updated_at:{{$contacter->updated_at->format('Y-m-d')}}</li>
                     @endforeach
                 </ul>
             </div>

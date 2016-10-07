@@ -15,7 +15,13 @@
     <link rel="stylesheet" href="{{url('css/app.css')}}">
 
     <script src="{{url('js/app.js')}}"></script>
-
+    <style>
+        .article-carousel-inner > .item > img,
+        .article-carousel-inner > .item > a > img {
+            width: 60%;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
 @include('backend.navigation')

@@ -10,7 +10,7 @@ class Thumbnail extends Model
     protected $fillable = ['name','article_id'];
 
     //缩略图的存储路径
-    public $store_path = 'images/thumbnails/';
+    public $store_path = '/images/thumbnails/';
 
     public function  getNameAttribute($name)
     {

@@ -23,35 +23,35 @@
                         {{csrf_field()}}
 
                         <div class="form-group">
-                            {!! Form::label('name','姓名:') !!}
+                            {!! Form::label('name','Name:') !!}
                             {!! Form::text('name',null,['class'=>'form-control']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('phone','手机号:') !!}
+                            {!! Form::label('phone','Phone Number:') !!}
                             {!! Form::text('phone',$contacter->phone,['class'=>'form-control']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('wechat_id','微信ID:') !!}
+                            {!! Form::label('wechat_id','We Chat ID:') !!}
                             {!! Form::text('wechat_id',$contacter->wechat_id,['class'=>'form-control']) !!}
                         </div>
 
 
                         <div class="form-group">
-                            {!! Form::label('avatar','选择新头像:') !!}
+                            {!! Form::label('avatar','Choose New Avatar:') !!}
                             {!! Form::file('avatar',['class'=>'form-control']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::submit('更新联系人',['class'=>'btn btn-info btn-block']) !!}
+                            {!! Form::submit('Update Contacter',['class'=>'btn btn-info btn-block']) !!}
                         </div>
 
                         {!! Form::close() !!}
 
                         {!! Form::open(['method' => 'DELETE','route'=>['contacter.destroy',$contacter->id]]) !!}
                         <div class="form-group">
-                            {!! Form::submit('删除联系人',['class'=>'btn btn-danger btn-block']) !!}
+                            {!! Form::submit('Delete Contacter',['class'=>'btn btn-danger btn-block']) !!}
                         </div>
                         {!! Form::close() !!}
 

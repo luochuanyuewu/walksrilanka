@@ -54,7 +54,7 @@ class ArticleController extends Controller
             'category_id' => 'required',
         ]);
 
-        $input = $request->except('pictures', 'thumbnail');
+        $input = $request->except('thumbnail');
 
         $article = Article::create($input);
 
@@ -73,32 +73,6 @@ class ArticleController extends Controller
         }
         #endregion
 
-        #region 处理图片
-//        if ($files_picture = $request->file('pictures')) {
-//            // Making counting of uploaded images
-//            $file_count = count($files_picture);
-//            // start count how many uploaded
-//            $uploadcount = 0;
-//            foreach ($files_picture as $file_picture) {
-//                $rules = ['file' => 'bail|required|image|dimensions:min_width=400,min_height=300,max_width=800,max_height=600|max:512'];
-//                $validator = Validator::make(['file' => $file_picture], $rules);
-//                if ($validator->passes()) {
-//                    $destinationPath = 'images/articles';
-//                    $filename = time() . $file_picture->getClientOriginalName();
-//                    $file_picture->move($destinationPath, $filename);
-//                    Picture::create(['name'=>$filename,'article_id'=>$article->id]);
-//                    $uploadcount++;
-//                }
-//            }
-//            if ($uploadcount == $file_count) {
-//                Session::flash('uploaded_pictures', 'Upload multiple pictures successfully');
-//            } else {
-//
-//                return redirect(route('article.index'))->withInput()->withErrors($validator);
-//            }
-//        }
-        #endregion
-
         //flash类型的Session只会出现一次就失效
         Session::flash('created_article', 'Create article successfull!');
 
@@ -115,7 +89,7 @@ class ArticleController extends Controller
     public function show($id)
     {
         $categories = Category::all();
-        $articles = Article::where('category_id', $id)->get();
+        $articles = Article::where('category_id', $id)->latest()->get();
         return view('backend.article.index', compact('articles', 'categories'));
     }
 
@@ -128,8 +102,9 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::find($id);
+        $pictures = $article->pictures;
         $categories = Category::pluck('name', 'id')->all();
-        return view('backend.article.edit', compact('article', 'categories'));
+        return view('backend.article.edit', compact('article', 'categories', 'pictures'));
     }
 
     /**
@@ -141,7 +116,45 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'thumbnail' => 'image|dimensions:min_width=400,min_height=300,max_width=800,max_height=600|max:512',
+            'title' => 'required|max:255',
+            'content' => 'required',
+            'category_id' => 'required',
+        ]);
+
+        $input = $request->except('thumbnail');
+
+        $article = Article::find($id);
+        $article->update($input);
+
+//        return $article;
+        #region 处理缩略图
+        if ($file_thumbnail = $request->file('thumbnail') and $article->thumbnail->name) {
+
+            //获取原缩略图文件路径
+            $original_thumbnail_path = public_path() . $article->thumbnail->name;
+            //如果文件存在就删除
+            if (file_exists($original_thumbnail_path)) unlink($original_thumbnail_path);
+            //生成新缩略图的名字
+            $name_thumbnail = time() . $file_thumbnail->getClientOriginalName();
+
+            $article->thumbnail->update(['name' => $name_thumbnail]);
+
+            try {
+                $file_thumbnail->move('images/thumbnails', $name_thumbnail);
+            } catch (FileException $e) {
+                $encodedName = iconv('utf-8', 'gbk', $name_thumbnail);
+                $file_thumbnail->move('images/thumbnails', $encodedName);
+            }
+        }
+        #endregion
+
+
+        //flash类型的Session只会出现一次就失效
+        Session::flash('updated_article', 'Updated article successfull!');
+
+        return redirect(route('article.edit', ['id' => $id]));
     }
 
     /**
@@ -152,6 +165,32 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::find($id);
+        #region 删除缩略图
+        if ($article->thumbnail) {
+            //获取原缩略图文件路径
+            $original_thumbnail_path = public_path() . $article->thumbnail->name;
+            //如果文件存在就删除
+            if (file_exists($original_thumbnail_path)) unlink($original_thumbnail_path);
+            $article->thumbnail->delete();
+        }
+        #endregion
+        #region 删除图片
+        if ($pictures = $article->pictures)
+            foreach ($pictures as $picture) {
+                //获取原缩略图文件路径
+                $original_picture_path = public_path() . $picture->name;
+                //如果文件存在就删除
+                if (file_exists($original_picture_path)) unlink($original_picture_path);
+                $picture->delete();
+            }
+        #endregion
+        $article->delete();
+
+        Session::flash('deleted_article', 'Deleted article successfull!');
+
+        return redirect(route('article.index'));
+
+
     }
 }

@@ -11,6 +11,8 @@
 |
 */
 
+use App\Category;
+
 Route::get('/', function () {
     return view('frontend.index');
 });
@@ -27,7 +29,7 @@ Route::get('foods', ['as' => 'frontend.foods', 'uses' => 'PageController@FoodInd
 
 Route::get('infos', ['as' => 'frontend.infos', 'uses' => 'PageController@InfoIndex']);
 
-Route::get('show/{id}',['as'=>'frontend.show','uses'=>'PageController@ArticleShow']);
+Route::get('show/{id}', ['as' => 'frontend.show', 'uses' => 'PageController@ArticleShow']);
 
 
 //需要登录后才能访问的界面
@@ -35,7 +37,9 @@ Route::group(['prefix' => 'backend', 'namespace' => 'Backend', 'middleware' => [
 
     //后台主页路由
     Route::get('/', ['as' => 'backend.index', function () {
-        return view('backend.index');
+        $categories = Category::all();
+
+        return view('backend.index',compact('categories'));
     }]);
 
     //登出路由
@@ -46,6 +50,9 @@ Route::group(['prefix' => 'backend', 'namespace' => 'Backend', 'middleware' => [
 
     //文章资源
     Route::resource('article', 'ArticleController');
+
+    //图片资源
+    Route::resource('picture', 'PictureController');
 
 
 });
