@@ -28,9 +28,11 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        @foreach($categories as $category)
-                            <li><a href="{{route('article.show',['id'=>$category->id])}}">{{$category->name}}</a></li>
-                        @endforeach
+                        <li><a href="{{route('article.show',['id'=>1])}}">Package</a></li>
+                        <li><a href="{{route('article.show',['id'=>2])}}">Place</a></li>
+                        <li><a href="{{route('article.show',['id'=>3])}}">Activity</a></li>
+                        <li><a href="{{route('article.show',['id'=>4])}}">Food</a></li>
+                        <li><a href="{{route('article.show',['id'=>5])}}">Info</a></li>
                     </ul>
                 </li>
 
