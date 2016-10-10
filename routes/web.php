@@ -11,10 +11,17 @@
 |
 */
 
+use App\Article;
 use App\Category;
 
 Route::get('/', function () {
-    return view('frontend.index');
+    $packages = Article::latest()->where('category_id',1)->take(3)->get();
+//    return $packages;
+    return view('frontend.index',compact('packages'));
+});
+
+Route::get('aboutsrilanka', function () {
+    return view('frontend.aboutSriLanka');
 });
 
 Route::get('contacters', ['as' => 'frontend.contacters', 'uses' => 'PageController@ContacterIndex']);

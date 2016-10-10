@@ -23,12 +23,15 @@
                         <li><a href="{{url('activities')}}">有趣的项目</a></li>
                         <li><a href="{{url('foods')}}">丰富的饮食</a></li>
                         <li><a href="{{url('infos')}}">有趣的旅游信息</a></li>
-
                     </ul>
                 </li>
 
                 <li><a href="{{url('packages')}}"><span
                                 class="fa fa-home"></span>旅游套餐</a>
+                </li>
+
+                <li><a href="{{url('aboutsrilanka')}}"><span
+                                class="fa fa-home"></span>了解斯里兰卡</a>
                 </li>
 
                 <li><a href="{{url('contacters')}}" class="animated"><span

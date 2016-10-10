@@ -10,7 +10,7 @@
                     这恰好为我们的专业团队提供了充足的机会来满足游客门对旅游斯里兰卡的美好向往,加入我们吧!与我们一起参观斯里兰卡,带回属于您的真正的斯里兰卡假日回忆!</p>
             </div>
         </div>
-
+        <hr>
         <div class="row text-center">
             <h2>为什么选择我们?</h2>
             <div class="col-md-3">
@@ -30,8 +30,23 @@
                 <span>24/7团队</span>
             </div>
         </div>
-
-
+        <hr>
+        <div class="row text-center">
+            <h2>最新旅游套餐</h2>
+            @foreach($packages as $package)
+                <div class="col-md-4">
+                    <div class="panel panel-default text-center">
+                        <div class="panel-body">
+                            <a href="{{url('show/' . $package->id)}}"><img src="{{url($package->thumbnail->name)}}"
+                                                                           width="200" height="150"></a>
+                            <h3>{{$package->title}}</h3>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            <a href="{{url('packages')}}" class="btn btn-success" role="button">查看所有套餐</a>
+        </div>
+        <hr>
     </div>
     </div>
 
