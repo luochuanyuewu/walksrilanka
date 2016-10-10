@@ -125,6 +125,20 @@
         </div>
     @endif
 
+    <div class="row alert alert-danger">
+        <ul>
+            <li>You can drag lower-right corner of the text editor to resize.</li>
+
+            <li>Thumbnail (has to be image) file szie will be lower than 512kb,min thumbnail size is 400*300, max
+                thumbnail size is 800*600.
+            </li>
+
+            <li>Slideshow pictures file szie will be lower than 512kb,min picture size is 400*300, max
+                picture size is 800*600.
+            </li>
+        </ul>
+    </div>
+
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('article-ckeditor');

@@ -4,8 +4,8 @@
         <div class="panel-group">
             <div class="row">
                 <div class="">
-                    <div class="panel panel-default text-center">
-                        <div class="panel-heading">
+                    <div class="panel panel-default ">
+                        <div class="panel-heading text-center">
                             <h3>{{$article->title}}</h3>
                         </div>
                         <div class="panel-body">
