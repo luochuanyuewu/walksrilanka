@@ -15,28 +15,31 @@ use App\Article;
 use App\Category;
 
 Route::get('/', function () {
-    $packages = Article::latest()->where('category_id',1)->take(3)->get();
+    $packages = Article::latest()->where('category_id', 1)->take(3)->get();
 //    return $packages;
-    return view('frontend.index',compact('packages'));
+    return view('frontend.index', compact('packages'));
 });
 
 Route::get('aboutsrilanka', function () {
     return view('frontend.aboutSriLanka');
 });
 
-Route::get('contacters', ['as' => 'frontend.contacters', 'uses' => 'PageController@ContacterIndex']);
+Route::group(['namespace' => 'Frontend'], function () {
 
-Route::get('packages', ['as' => 'frontend.packages', 'uses' => 'PageController@PackageIndex']);
+    Route::get('contacters', ['as' => 'frontend.contacters', 'uses' => 'PageController@ContacterIndex']);
 
-Route::get('places', ['as' => 'frontend.places', 'uses' => 'PageController@PlaceIndex']);
+    Route::get('packages', ['as' => 'frontend.packages', 'uses' => 'PageController@PackageIndex']);
 
-Route::get('activities', ['as' => 'frontend.activities', 'uses' => 'PageController@ActivityIndex']);
+    Route::get('places', ['as' => 'frontend.places', 'uses' => 'PageController@PlaceIndex']);
 
-Route::get('foods', ['as' => 'frontend.foods', 'uses' => 'PageController@FoodIndex']);
+    Route::get('activities', ['as' => 'frontend.activities', 'uses' => 'PageController@ActivityIndex']);
 
-Route::get('infos', ['as' => 'frontend.infos', 'uses' => 'PageController@InfoIndex']);
+    Route::get('foods', ['as' => 'frontend.foods', 'uses' => 'PageController@FoodIndex']);
 
-Route::get('show/{id}', ['as' => 'frontend.show', 'uses' => 'PageController@ArticleShow']);
+    Route::get('infos', ['as' => 'frontend.infos', 'uses' => 'PageController@InfoIndex']);
+
+    Route::get('show/{id}', ['as' => 'frontend.show', 'uses' => 'PageController@ArticleShow']);
+});
 
 
 //需要登录后才能访问的界面
@@ -46,7 +49,7 @@ Route::group(['prefix' => 'backend', 'namespace' => 'Backend', 'middleware' => [
     Route::get('/', ['as' => 'backend.index', function () {
         $categories = Category::all();
 
-        return view('backend.index',compact('categories'));
+        return view('backend.index', compact('categories'));
     }]);
 
     //登出路由
