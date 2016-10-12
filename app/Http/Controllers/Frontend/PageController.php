@@ -73,6 +73,8 @@ class PageController extends Controller
     public function ContacterIndex()
     {
         $contacters = Contacter::all();
-        return view('frontend.contacter.index',compact('contacters'));
+        $packages = Category::find(1)->articles()->pluck('title');
+
+        return view('frontend.contacter.index',compact('contacters','packages'));
     }
 }

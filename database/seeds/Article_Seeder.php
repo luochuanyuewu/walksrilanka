@@ -14,7 +14,7 @@ class Article_Seeder extends Seeder
     public function run()
     {
 
-        //给5个分类分别创建个文章
+        //给5个分类分别创建10个文章
         for ($i = 1; $i <= 5; $i++) {
             for ($j = 1; $j <= 10; $j++) {
                 Article::create(['title'=>'Title_Cate_' . $i,'content'=>'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容

@@ -35,7 +35,7 @@
                 </li>
 
                 <li><a href="{{url('contacters')}}" class="animated"><span
-                                class="fa fa-fire"></span> 联系我们</a></li>
+                                class="fa fa-fire"></span> 联系订购</a></li>
 
             </ul>
         </div>
