@@ -4,9 +4,9 @@
     <div class="container">
 
         <div class="row">
-            <div class="text-center">
+            <div class="col-md-10 col-md-offset-1 text-center">
                 <h2>欢迎来到散步斯里兰卡</h2>
-                <p>我们拥有多年的旅游与服务行业经验,我们重视提供优质的服务,时刻保持高标准的行业服务态度。同时,斯里兰卡是一个充满神秘与多样性的国家,
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们拥有多年的旅游与服务行业经验,我们重视提供优质的服务,时刻保持高标准的行业服务态度。同时,斯里兰卡是一个充满神秘与多样性的国家,
                     这恰好为我们的专业团队提供了充足的机会来满足游客门对旅游斯里兰卡的美好向往,加入我们吧!与我们一起参观斯里兰卡,带回属于您的真正的斯里兰卡假日回忆!</p>
             </div>
         </div>
@@ -34,16 +34,16 @@
         <div class="row text-center">
             <h2>最新旅游套餐</h2>
             @foreach($packages as $package)
-                <div class="col-md-4">
-                    <div class="panel panel-default text-center">
-                        <div class="panel-body">
-                            <a href="{{url('show/' . $package->id)}}"><img src="{{url($package->thumbnail->name)}}"
-                                                                           width="200" height="150"></a>
-                            <h3>{{$package->title}}</h3>
-                        </div>
-                    </div>
+                <div class="col-md-4 text-center">
+                    <a href="{{url('show/' . $package->id)}}"><img src="{{url($package->thumbnail->name)}}"
+                                                                   width="200" height="150"></a>
+                    <h3>{{$package->title}}</h3>
                 </div>
             @endforeach
+
+        </div>
+
+        <div class="row text-center">
             <a href="{{url('packages')}}" class="btn btn-success" role="button">查看所有套餐</a>
         </div>
         <hr>
