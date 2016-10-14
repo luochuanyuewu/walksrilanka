@@ -29,6 +29,16 @@
             </div>
         </div>
 
+        @if (count($errors) > 0)
+            <div class="row alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         {{--订单提交部分--}}
         <div class="row">
             <div class="">
@@ -45,9 +55,13 @@
                         <div class="form-group">
                             {!! Form::label('tourPackage','选择你的旅游套餐:') !!}
                             <select name="tourPackage" class="form-control">
-                                @foreach($packages as $package)
-                                    <option value="{{ $package }}">{{ $package }}</option>
-                                @endforeach
+                                @if($packageName)
+                                    <option value="{{ $packageName }}">{{ $packageName }}</option>
+                                @else
+                                    @foreach($packages as $package)
+                                        <option value="{{ $package }}">{{ $package }}</option>
+                                    @endforeach
+                                @endif
                             </select>
                         </div>
 
@@ -89,17 +103,17 @@
 
                         <div class="form-group">
                             {!! Form::label('specialRequests','特殊要求:') !!}
-                            {!! Form::textarea('specialRequests',null,['class'=>'form-control','placeholder'=>'请填写您的其他要求.','rows'=>4]) !!}
+                            {!! Form::textarea('specialRequests',null,['class'=>'form-control','placeholder'=>'请填写您的其他要求.选填','rows'=>4]) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('name','您的名字:') !!}
+                            {!! Form::label('name','您的姓名:') !!}
                             {!! Form::text('name',null,['class'=>'form-control','placeholder'=>'请填写您的名字,必填.']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('name','您的地址:') !!}
-                            {!! Form::text('name',null,['class'=>'form-control','placeholder'=>'请填写您的大致居住地址,选填.']) !!}
+                            {!! Form::label('address','您的地址:') !!}
+                            {!! Form::text('address',null,['class'=>'form-control','placeholder'=>'请填写您的大致居住地址,选填.']) !!}
                         </div>
 
                         <div class="form-group">
@@ -109,7 +123,7 @@
 
                         <div class="form-group">
                             {!! Form::label('phone','您的手机号:') !!}
-                            {!! Form::text('phone',null,['class'=>'form-control','placeholder'=>'请填写您的名字,必填.']) !!}
+                            {!! Form::number('phone',null,['class'=>'form-control','placeholder'=>'请填写您的名字,必填.']) !!}
                         </div>
 
                         <div class="form-group">

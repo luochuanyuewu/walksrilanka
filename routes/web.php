@@ -26,7 +26,7 @@ Route::get('aboutsrilanka', function () {
 
 Route::group(['namespace' => 'Frontend'], function () {
 
-    Route::get('contacters', ['as' => 'frontend.contacters', 'uses' => 'PageController@ContacterIndex']);
+    Route::get('contacters/{SelectedPackage?}', ['as' => 'frontend.contacters', 'uses' => 'PageController@ContacterIndex']);
 
     Route::get('packages', ['as' => 'frontend.packages', 'uses' => 'PageController@PackageIndex']);
 

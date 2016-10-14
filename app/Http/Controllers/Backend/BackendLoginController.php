@@ -18,13 +18,20 @@ class BackendLoginController extends Controller
     }
     //处理用户登陆
     public function Login(Request $request){
+
+        $this->validate($request, [
+            'name' =>'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
         $input = $request->all();
         $users = User::all();
         foreach ($users as $user)
         {
             if(($user->email == $input['email']) and (decrypt($user->password) == $input['password']))
             {
-                session(['username' => $user->name,'islogin'=>1]);
+                session(['username' => $request->name,'islogin'=>1]);
                 return redirect(route('backend.index'));
             }
         }

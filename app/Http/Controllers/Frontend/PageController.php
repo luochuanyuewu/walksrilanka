@@ -67,14 +67,24 @@ class PageController extends Controller
     {
         $article = Article::find($id);
         $pictures = $article->pictures;
-        return view('frontend.pages.show',compact('article','pictures'));
+        return view('frontend.pages.show', compact('article', 'pictures'));
     }
 
-    public function ContacterIndex()
+    public function ContacterIndex($PackageID = null)
     {
         $contacters = Contacter::all();
         $packages = Category::find(1)->articles()->pluck('title');
+        $packageName = null;
+        if ($PackageID) {
+            $package = Article::find($PackageID);
+            if ($package and $package->category_id == 1)
+                $packageName = $package->title;
+        }
 
-        return view('frontend.contacter.index',compact('contacters','packages'));
+//        return $packageName;
+
+
+
+        return view('frontend.contacter.index', compact('contacters', 'packages', 'packageName'));
     }
 }

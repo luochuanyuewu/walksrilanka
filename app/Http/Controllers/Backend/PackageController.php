@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Requests\PackageStoreRequest;
+use App\Package;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -35,8 +37,10 @@ class PackageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PackageStoreRequest $request)
     {
+        $input = $request->all();
+        Package::create($input);
         return $request->all();
     }
 

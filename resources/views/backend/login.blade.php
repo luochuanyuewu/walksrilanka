@@ -19,9 +19,22 @@
             @if(Session::has('login_error'))
                 <p class="bg-danger">{{session('login_error')}}</p>
             @endif
-
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="{{route('backend.login')}}" method="post">
                 {{csrf_field()}}
+
+                <div class="form-group">
+                    <label for="name">Your name:</label>
+                    <input type="text" name="name" class="form-control" id="email">
+                </div>
                 <div class="form-group">
                     <label for="email">Email address:</label>
                     <input type="email" name="email" class="form-control" id="email">
