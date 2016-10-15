@@ -11,7 +11,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li id="home" class="active"><a href="/" class="animated"><span
+                <li class="active"><a href="/" class="animated"><span
                                 class="fa fa-home"></span>Go to frontend</a>
                 </li>
 
@@ -22,6 +22,10 @@
                         <li><a href="{{route('article.index')}}">View Ariciles</a></li>
                         <li><a href="{{route('article.create')}}">Create New Article</a></li>
                     </ul>
+                </li>
+
+                <li class=""><a href="{{route('package.index')}}" class="animated"><span
+                                class="fa fa-home"></span>View Package Requests</a>
                 </li>
 
                 <li class="dropdown">

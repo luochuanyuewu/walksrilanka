@@ -67,6 +67,9 @@ Route::group(['prefix' => 'backend', 'namespace' => 'Backend', 'middleware' => [
     //图片资源
     Route::resource('picture', 'PictureController');
 
+    //套餐资源
+    Route::resource('package','PackageController');
+
 
 
 });

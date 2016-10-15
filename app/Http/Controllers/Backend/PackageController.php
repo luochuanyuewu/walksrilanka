@@ -18,7 +18,8 @@ class PackageController extends Controller
      */
     public function index()
     {
-        //
+        $packages = Package::latest()->get();
+        return view('backend.package.index',compact('packages'));
     }
 
     /**
@@ -52,7 +53,8 @@ class PackageController extends Controller
      */
     public function show($id)
     {
-        //
+        $package = Package::find($id);
+        return view('backend.package.show',compact('package'));
     }
 
     /**
