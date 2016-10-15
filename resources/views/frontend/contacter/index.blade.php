@@ -39,6 +39,12 @@
             </div>
         @endif
 
+
+        @if(Session::has('created_packageRequest'))
+            <div class="row">
+                <p class="bg-danger">{{session('created_packageRequest')}}</p>
+            </div>
+        @endif
         {{--订单提交部分--}}
         <div class="row">
             <div class="">

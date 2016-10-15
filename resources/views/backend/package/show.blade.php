@@ -3,8 +3,7 @@
 
     @if($package)
         <div class="container">
-            <h2>Bordered Table</h2>
-            <p>套餐详情(Package dteails)</p>
+            <h2>套餐详情(Package dteails)</h2>
             <table class="table table-bordered">
                 <thead>
                 <tr>

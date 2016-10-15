@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class PackageController extends Controller
 {
@@ -41,8 +42,12 @@ class PackageController extends Controller
     public function store(PackageStoreRequest $request)
     {
         $input = $request->all();
+
         Package::create($input);
-        return $request->all();
+
+        Session::flash('created_packageRequest', '您的请求已经创建成功,我们会在24小时内联系您,请确保您的联系方式畅通!');
+
+        return redirect(url('contacters'));
     }
 
     /**
