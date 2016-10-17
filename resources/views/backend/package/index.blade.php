@@ -5,16 +5,26 @@
         <div class="panel panel-default">
             <div class="panel-heading">所有旅游套餐(All Packages)</div>
             <div class="panel-body">
-                <ul class="list-group">
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                    <tr>
+                        <th>Package Name</th>
+                        <th>Visitor</th>
+                        <th>Request Time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
                     @foreach($packages as $package)
-                        <li class="list-group-item">ID:<a
-                                    href="{{route('package.show',['id'=>$package->id])}}">{{$package->id}}</a>
-                            Guest Name:{{$package->name}}, Phone:{{$package->phone}}, Package
-                            Name:{{$package->tourPackage}},
-                            Created_at:{{$package->created_at->format('Y-m-d') }},
-                        </li>
+                        <tr>
+                            <td>{{$package->tourPackage}}</td>
+                            <td>{{$package->name}}</td>
+                            <td>{{$package->created_at->format('Y-m-d')}}</td>
+                        </tr>
                     @endforeach
-                </ul>
+
+                    </tbody>
+                </table>
+
             </div>
         </div>
     </div>
