@@ -47,7 +47,7 @@
                 @endforeach
 
             </div>
-
+            <br>
             <div class="row text-center">
                 <a href="{{url('packages')}}" class="btn btn-success" role="button">查看所有套餐</a>
             </div>
@@ -90,15 +90,22 @@
             <div class="row text-center">
                 <h2>旅游景点</h2>
                 <div class="col-md-6">
-                    @foreach($places as $place)
+                    @for($i = 0;$i<8;$i+=2)
                         <div class="row">
-                            <a href="{{url('show/' . $place->id)}}"><img
-                                        src="{{url($place->thumbnail->name)}}"
-                                        width="225" height="175" class="img-thumbnail img-rounded"></a>
-                            <h4>{{$place->title}}</h4>
+                            <div class="col-md-6">
+                                <a href="{{url('show/' . $places[$i]->id)}}"><img
+                                            src="{{url($places[$i]->thumbnail->name)}}"
+                                            width="227" height="177" class="img-thumbnail img-rounded"></a>
+                                <h4>{{$places[$i]->title}}</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="{{url('show/' . $places[$i+1]->id)}}"><img
+                                            src="{{url($places[$i+1]->thumbnail->name)}}"
+                                            width="227" height="177" class="img-thumbnail img-rounded"></a>
+                                <h4>{{$places[$i+1]->title}}</h4>
+                            </div>
                         </div>
-
-                    @endforeach
+                    @endfor
 
                 </div>
                 <div class="col-md-6">
@@ -107,9 +114,9 @@
                 </div>
 
             </div>
-
+            <br>
             <div class="row text-center">
-                <a href="{{url('packages')}}" class="btn btn-success" role="button">查看所有景点</a>
+                <a href="{{url('places')}}" class="btn btn-success" role="button">查看所有景点</a>
             </div>
         </div>
         <hr>

@@ -16,7 +16,7 @@ use App\Category;
 
 Route::get('/', function () {
     $packages = Article::latest()->where('category_id', 1)->take(3)->get();
-    $places = Article::latest()->where('category_id',2)->take(4)->get();
+    $places = Article::latest()->where('category_id',2)->take(8)->get();
 //    return $packages;
     return view('frontend.index', compact('packages','places'));
 });
