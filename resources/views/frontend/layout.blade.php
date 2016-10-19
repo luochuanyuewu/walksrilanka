@@ -18,7 +18,7 @@
     <style>
         .article-carousel-inner > .item > img,
         .article-carousel-inner > .item > a > img {
-            width: 60%;
+            width: 70%;
             margin: auto;
         }
     </style>

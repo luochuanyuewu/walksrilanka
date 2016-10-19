@@ -30,9 +30,9 @@
                                 class="fa fa-home"></span>旅游套餐</a>
                 </li>
 
-                <li><a href="{{url('aboutsrilanka')}}"><span
-                                class="fa fa-home"></span>了解斯里兰卡</a>
-                </li>
+                {{--<li><a href="{{url('aboutsrilanka')}}"><span--}}
+                                {{--class="fa fa-home"></span>了解斯里兰卡</a>--}}
+                {{--</li>--}}
 
                 <li><a href="{{url('contacters')}}" class="animated"><span
                                 class="fa fa-fire"></span> 联系订购</a></li>

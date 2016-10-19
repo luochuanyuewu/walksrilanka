@@ -23,9 +23,11 @@
                                 article</a><br>
                             <a href="{{route('contacter.create')}}" class="btn-block btn-lg btn-primary">Create a new
                                 contacter</a><br>
-                            <a href="{{route('contacter.index')}}" class="btn-block btn-lg btn-primary">View all contacters</a><br>
+                            <a href="{{route('contacter.index')}}" class="btn-block btn-lg btn-primary">View all
+                                contacters</a><br>
                             <a href="#" class="btn-block btn-lg btn-primary">Check custom plan requests.</a><br>
-                            <a href="#" class="btn-block btn-lg btn-primary">Check package requests.</a><br>
+                            <a href="{{route('package.index')}}" class="btn-block btn-lg btn-primary">Check package
+                                requests.</a><br>
                             <a href="#" class="btn-block btn-lg btn-primary">Check guest messages.</a><br>
 
                         </div>

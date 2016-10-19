@@ -15,6 +15,10 @@
                                 class="fa fa-home"></span>Go to frontend</a>
                 </li>
 
+                <li class=""><a href="{{route('package.index')}}" class="animated"><span
+                                class="fa fa-home"></span>Package Requests</a>
+                </li>
+
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Articles
                         <span class="caret"></span></a>
@@ -22,10 +26,6 @@
                         <li><a href="{{route('article.index')}}">View Ariciles</a></li>
                         <li><a href="{{route('article.create')}}">Create New Article</a></li>
                     </ul>
-                </li>
-
-                <li class=""><a href="{{route('package.index')}}" class="animated"><span
-                                class="fa fa-home"></span>View Package Requests</a>
                 </li>
 
                 <li class="dropdown">

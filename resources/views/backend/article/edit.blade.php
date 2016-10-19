@@ -127,6 +127,9 @@
 
     <div class="row alert alert-danger">
         <ul>
+            <li>If you want to use Slideshow, You have to make sure those slideshow pictures have same width and height, or it would be stangle.
+            </li>
+
             <li>You can drag lower-right corner of the text editor to resize.</li>
 
             <li>Thumbnail (has to be image) file szie will be lower than 512kb,min thumbnail size is 400*300, max
