@@ -14,7 +14,7 @@
         <hr>
         {{--商标部分--}}
         <div class="row text-center">
-            <div class="col-sm-6 col-sm-offset-3">
+            <div class="col-sm-12   col-md-8 col-md-offset-2">
                 <h2>为什么选择我们?</h2>
                 <div class="col-sm-3">
                     <img src="{{url('img_frontend/index/prices.png')}}" alt="价格">
@@ -41,10 +41,10 @@
             <div class="row text-center">
                 <h2>最新旅游套餐</h2>
                 @foreach($packages as $package)
-                    <div class="col-sm-4 text-center">
+                    <div class="col-sm-6 col-md-4 text-center">
                         <a href="{{url('show/' . $package->id)}}"><img src="{{url($package->thumbnail->name)}}"
-                                                                       width="400" height="300"
-                                                                       class="img-rounded img-circle"></a>
+                                                                       width="300" height="225"
+                                                                       class="img-rounded img-circle "></a>
                         <h4>{{$package->title}}</h4>
                     </div>
                 @endforeach
@@ -60,7 +60,7 @@
 
         {{--关于斯里兰卡部分--}}
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
+            <div class="col-md-10 col-md-offset-1 col-sm-12">
                 <h2 class="text-center">关于斯里兰卡</h2>
                 <div class="col-sm-6">
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;天堂,是描述斯里兰卡的最佳形容词之一,
@@ -88,43 +88,33 @@
 
         <hr>
 
-        @if(count($places)>=8)
-            {{--旅游景点部分--}}
-            <div>
-                <div class="row text-center">
-                    <h2>旅游景点</h2>
-                    <div class="col-md-6">
-                        @for($i = 0;$i<8;$i+=2)
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <a href="{{url('show/' . $places[$i]->id)}}"><img
-                                                src="{{url($places[$i]->thumbnail->name)}}"
-                                                width="300" height="225" class=" "></a>
-                                    <h4>{{$places[$i]->title}}</h4>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="{{url('show/' . $places[$i+1]->id)}}"><img
-                                                src="{{url($places[$i+1]->thumbnail->name)}}"
-                                                width="300" height="225" class=" "></a>
-                                    <h4>{{$places[$i+1]->title}}</h4>
-                                </div>
-                            </div>
-                        @endfor
-
-                    </div>
-                    <div class="col-md-6">
-                        <img src="{{url('img_frontend/index/map.gif')}}" alt="地图"
-                             class=" " width="700" height="1083">
-                    </div>
+        {{--旅游景点部分--}}
+        <div>
+            <div class="row text-center">
+                <h2>旅游景点</h2>
+                <div class="col-md-6">
+                    @foreach($places as $place)
+                        <div class="col-sm-6 col-xs-12">
+                            <a href="{{url('show/' . $place->id)}}"><img
+                                        src="{{url($place->thumbnail->name)}}"
+                                        width="300" height="225" class=" "></a>
+                            <h4>{{$place->title}}</h4>
+                        </div>
+                    @endforeach
 
                 </div>
-                <br>
-                <div class="row text-center">
-                    <a href="{{url('places')}}" class="btn btn-success" role="button">查看所有景点</a>
+                <div class="col-md-6">
+                    <img src="{{url('img_frontend/index/map.gif')}}" alt="地图"
+                         class="img-responsive hidden-xs" width="700" height="1083">
                 </div>
+
             </div>
-            <hr>
-        @endif
+            <br>
+            <div class="row text-center">
+                <a href="{{url('places')}}" class="btn btn-success" role="button">查看所有景点</a>
+            </div>
+        </div>
+        <hr>
 
     </div>
 
