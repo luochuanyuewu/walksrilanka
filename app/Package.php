@@ -20,6 +20,7 @@ class Package extends Model
         'name',
         'address',
         'phone',
-        'email'
+        'email',
+        'wechat_id'
     ];
 }

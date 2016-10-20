@@ -41,6 +41,8 @@ class CreatePackagesTable extends Migration
             $table->string('phone');
             //客户邮箱
             $table->string('email');
+            //客户微信
+            $table->string('wechat_id')->nullable();
             $table->timestamps();
         });
     }

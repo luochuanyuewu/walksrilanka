@@ -9,7 +9,7 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Tour Package</th>
+                    <th>Package Name</th>
                     <th>DateOfArrival</th>
                     <th>DateOfDeparture</th>
                 </tr>
@@ -77,6 +77,7 @@
                 <tr>
                     <th>Name</th>
                     <th>Phone</th>
+                    <th>WeChat</th>
                     <th>Email</th>
                     <th>Address</th>
                 </tr>
@@ -85,6 +86,7 @@
                 <tr>
                     <td>{{$package->name}}</td>
                     <td>{{$package->phone}}</td>
+                    <td>{{$package->wechat_id}}</td>
                     <td>{{$package->email}}</td>
                     <td>{{$package->address}}</td>
 

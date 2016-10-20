@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
 
         {{--联系人部分--}}
         <div class="row">
@@ -13,7 +13,7 @@
             <div class="panel-group">
                 <div class="row">
                     @foreach($contacters as $contacter)
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <img src="{{url($contacter->avatar)}}" alt="{{$contacter->name}}"
@@ -45,21 +45,35 @@
                 <p class="bg-danger">{{session('created_packageRequest')}}</p>
             </div>
         @endif
-        {{--订单提交部分--}}
+
+
+        {{--旅游套餐请求触发按钮--}}
         <div class="row">
-            <div class="">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <i class="fa fa-info-circle fa-fw"></i> 创建你的旅游请求单
+            <div class="col-md-8 col-md-offset-2">
+                <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#TourReqestForm">提交旅游请求单</button>
+            </div>
+        </div>
+
+        <hr>
+
+
+        {{--旅游套餐请求对话框--}}
+        <div id="TourReqestForm" class="modal fade " role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">创建您的旅游请求单</h4>
                     </div>
-                    <div class="panel-body">
+                    <div class="modal-body">
                         {!! Form::open(['method'=>'post','route'=>['request.store']]) !!}
 
                         {{csrf_field()}}
 
 
                         <div class="form-group">
-                            {!! Form::label('tourPackage','选择你的旅游套餐:') !!}
+                            {!! Form::label('tourPackage','选择您的旅游套餐:') !!}
                             <select name="tourPackage" class="form-control">
                                 @if($packageName)
                                     <option value="{{ $packageName }}">{{ $packageName }}</option>
@@ -118,8 +132,13 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('address','您的地址:') !!}
-                            {!! Form::text('address',null,['class'=>'form-control','placeholder'=>'请填写您的大致居住地址,选填.']) !!}
+                            {!! Form::label('phone','您的手机号:') !!}
+                            {!! Form::number('phone',null,['class'=>'form-control','placeholder'=>'请填写您的手机号以便我们联系,必填.']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('wechat_id','您的微信ID:') !!}
+                            {!! Form::text('wechat_id',null,['class'=>'form-control','placeholder'=>'请填写您的微信ID以便我们联系,建议填写!']) !!}
                         </div>
 
                         <div class="form-group">
@@ -128,21 +147,23 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('phone','您的手机号:') !!}
-                            {!! Form::number('phone',null,['class'=>'form-control','placeholder'=>'请填写您的名字,必填.']) !!}
+                            {!! Form::label('address','您的地址:') !!}
+                            {!! Form::text('address',null,['class'=>'form-control','placeholder'=>'请填写您的大致居住地址,选填.']) !!}
                         </div>
-
                         <div class="form-group">
                             {!! Form::submit('提交请求',['class'=>'btn btn-info btn-block']) !!}
                         </div>
 
                         {!! Form::close() !!}
-
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+
 
     </div>
 
