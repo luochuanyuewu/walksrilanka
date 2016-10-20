@@ -105,7 +105,7 @@
                 </div>
                 <div class="col-md-6">
                     <img src="{{url('img_frontend/index/map.gif')}}" alt="地图"
-                         class="img-responsive hidden-xs" width="700" height="1083">
+                         class="img-responsive" width="700" height="1083">
                 </div>
 
             </div>
