@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('content')
-    <div class="">
+    <div class="container-fluid">
 
         {{--介绍部分--}}
         <div class="row">
