@@ -24,10 +24,21 @@
     </style>
 </head>
 <body>
-@include('frontend.navigation')
-@include('frontend.sideshow')
+@include('frontend.includes.navigation')
 
-@yield('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9" >
+            @include('frontend.includes.sideshow')
+            @yield('content')
+        </div>
+
+        <div class="col-sm-3">
+            @include('frontend.includes.rightside')
+        </div>
+    </div>
+</div>
+
 <br>
 <footer class="text-center" style="background-color: black">
     2016~至今 散步斯里兰卡 | 版权所有

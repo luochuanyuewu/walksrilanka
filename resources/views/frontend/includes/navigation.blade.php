@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" style="margin-bottom: 0px">
+<nav class="navbar navbar-default" style="margin-bottom: 10px">
     <div class="container-fluid">
         <div class="navbar-header">
             <a href="{{url('/')}}" class="animated"><img src="{{asset('img_frontend/siteLogo.png')}}" alt="散步斯里兰卡"
@@ -29,10 +29,6 @@
                 <li><a href="{{url('packages')}}"><span
                                 class="fa fa-home"></span>旅游套餐</a>
                 </li>
-
-                {{--<li><a href="{{url('aboutsrilanka')}}"><span--}}
-                                {{--class="fa fa-home"></span>了解斯里兰卡</a>--}}
-                {{--</li>--}}
 
                 <li><a href="{{url('contacters')}}" class="animated"><span
                                 class="fa fa-fire"></span> 联系订购</a></li>

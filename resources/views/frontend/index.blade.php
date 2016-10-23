@@ -1,11 +1,11 @@
 @extends('frontend.layout')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="">
 
         {{--介绍部分--}}
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
+            <div class="col-sm-10 col-sm-offset-1">
                 <h2 class="text-center">欢迎来到散步斯里兰卡</h2>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们拥有多年的旅游与服务行业经验,我们重视提供优质的服务,时刻保持高标准的行业服务态度。同时,斯里兰卡是一个充满神秘与多样性的国家,
                     这恰好为我们的专业团队提供了充足的机会来满足游客门对旅游斯里兰卡的美好向往,加入我们吧!与我们一起参观斯里兰卡,带回属于您的真正的斯里兰卡假日回忆!</p>
@@ -38,14 +38,15 @@
         <hr>
         {{--最新套餐部分--}}
         <div>
-            <div class="row text-center">
-                <h2>最新旅游套餐</h2>
+            <div class="row ">
+                <h2 class="text-center">最新旅游套餐</h2>
                 @foreach($packages as $package)
-                    <div class="col-sm-6 col-md-4 text-center">
-                        <a href="{{url('show/' . $package->id)}}"><img src="{{url($package->thumbnail->name)}}"
-                                                                       width="300" height="225"
-                                                                       class="img-rounded img-circle "></a>
-                        <h4>{{$package->title}}</h4>
+                    <div class="col-md-4">
+                        <a href="{{url('show/' . $package->id)}}" class="thumbnail">
+                            <p class="text-center">{{$package->title}}</p>
+                            <img src="{{url($package->thumbnail->name)}}" class="img-responsive"
+                                 style="width:300px;height:225px">
+                        </a>
                     </div>
                 @endforeach
 
@@ -94,18 +95,19 @@
                 <h2>旅游景点</h2>
                 <div class="col-md-6">
                     @foreach($places as $place)
-                        <div class="col-sm-6 col-xs-12">
-                            <a href="{{url('show/' . $place->id)}}"><img
-                                        src="{{url($place->thumbnail->name)}}"
-                                        width="300" height="225" class=" "></a>
-                            <h4>{{$place->title}}</h4>
+                        <div class="col-md-6 col-sm-12">
+                            <a href="{{url('show/' . $place->id)}}" class="thumbnail">
+                                <p class="text-center">{{$place->title}}</p>
+                                <img src="{{url($place->thumbnail->name)}}" class=""
+                                     style="width:300px;height:225px">
+                            </a>
                         </div>
                     @endforeach
 
                 </div>
                 <div class="col-md-6">
                     <img src="{{url('img_frontend/index/map.gif')}}" alt="地图"
-                         class="img-responsive" width="700" height="1083">
+                         class="img-thumbnail" width="700" height="1083" style="width: 700px; height: 1083px">
                 </div>
 
             </div>
