@@ -19,6 +19,10 @@
                                 class="fa fa-home"></span>Package Requests</a>
                 </li>
 
+                <li class=""><a href="{{route('unisharp.lfm.show')}}" class="animated"><span
+                                class="fa fa-home"></span>File Manager</a>
+                </li>
+
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Articles
                         <span class="caret"></span></a>

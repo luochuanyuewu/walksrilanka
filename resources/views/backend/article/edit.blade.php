@@ -127,7 +127,8 @@
 
     <div class="row alert alert-danger">
         <ul>
-            <li>If you want to use Slideshow, You have to make sure those slideshow pictures have same width and height, or it would be stangle.
+            <li>If you want to use Slideshow, You have to make sure those slideshow pictures have same width and height,
+                or it would be stangle.
             </li>
 
             <li>You can drag lower-right corner of the text editor to resize.</li>
@@ -142,8 +143,18 @@
         </ul>
     </div>
 
+    {{--<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>--}}
+    {{--<script>--}}
+    {{--CKEDITOR.replace('article-ckeditor');--}}
+    {{--</script>--}}
+
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('article-ckeditor');
+        CKEDITOR.replace( 'article-ckeditor', {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+        });
     </script>
 @endsection

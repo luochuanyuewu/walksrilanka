@@ -56,8 +56,18 @@
     </div>
 
 
+    {{--<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>--}}
+    {{--<script>--}}
+        {{--CKEDITOR.replace('article-ckeditor');--}}
+    {{--</script>--}}
+
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('article-ckeditor');
+        CKEDITOR.replace( 'article-ckeditor', {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+        });
     </script>
 @endsection
