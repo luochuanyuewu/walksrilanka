@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="{{url('css/app.css')}}">
 
     <script src="{{url('js/app.js')}}"></script>
+
+
+    <link rel="stylesheet" href="{{url('vendor/scrollToTop/css/totop.css')}}">
+
     <style>
         .article-carousel-inner > .item > img,
         .article-carousel-inner > .item > a > img {
@@ -28,7 +32,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-9" >
+        <div class="col-sm-9">
             @include('frontend.includes.sideshow')
             @yield('content')
         </div>
@@ -37,11 +41,27 @@
             @include('frontend.includes.rightside')
         </div>
     </div>
+
+    {{--ScrollToTop容器--}}
+    <div id="totopscroller"></div>
+
+    <br>
+
+    <footer class="text-center">
+        2016~至今 散步斯里兰卡 | 版权所有
+    </footer>
+
+
 </div>
 
-<br>
-<footer class="text-center" style="background-color: black">
-    2016~至今 散步斯里兰卡 | 版权所有
-</footer>
+<script src="{{url('vendor/scrollToTop/js/jquery.totop.js')}}"></script>
+
+<script>
+    $(function(){
+        $('#totopscroller').totopscroller({link:'http://www.sanbusililanka.com'});
+    })
+</script>
+
+
 </body>
 </html>
