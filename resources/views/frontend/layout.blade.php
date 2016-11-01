@@ -50,9 +50,8 @@
 
     <br>
 
-    <footer class="text-center">
-        2016~至今 散步斯里兰卡 | 版权所有
-    </footer>
+
+    @include('frontend.includes.footer')
 
 
 </div>
