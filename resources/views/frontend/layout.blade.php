@@ -14,10 +14,12 @@
 
     <link rel="stylesheet" href="{{url('css/app.css')}}">
 
-    <script src="{{url('js/app.js')}}"></script>
 
 
     <link rel="stylesheet" href="{{url('vendor/scrollToTop/css/totop.css')}}">
+    <link rel="stylesheet" href="{{url('css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
+
 
     <style>
         .article-carousel-inner > .item > img,
@@ -27,10 +29,11 @@
         }
     </style>
 </head>
-<body>
-@include('frontend.includes.navigation')
+<body style="background-color: lightgoldenrodyellow">
 
-<div class="container-fluid">
+<div class="container">
+    @include('frontend.includes.navigation')
+
     <div class="row">
         <div class="col-sm-9">
             @include('frontend.includes.sideshow')
@@ -53,6 +56,10 @@
 
 
 </div>
+
+
+<script src="{{url('js/app.js')}}"></script>
+
 
 <script src="{{url('vendor/scrollToTop/js/jquery.totop.js')}}"></script>
 
