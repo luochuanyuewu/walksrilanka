@@ -26,7 +26,6 @@
             {{--</div>--}}
         {{--</div>--}}
     {{--</div>--}}
-    <hr>
     <div class="row">
         <div class="col-md-12 text-center">
             <span style="display: block;line-height: 50px">

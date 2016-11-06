@@ -38,6 +38,21 @@
                 <li>
                     <a href="{{url('contacters')}}">联系订购界面</a>
                 </li>
+
+            </ul>
+        </div>
+    </div>
+
+    {{--联系订购--}}
+    <div class="panel panel-success animated fadeInRight">
+        <div class="panel-heading">
+            <h4 class="title">留言反馈</h4>
+        </div>
+        <div class="panel-body" style="background-color: lightyellow;padding: 3px">
+            <ul>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#FeedbackBox">我要反馈</a>
+                </li>
             </ul>
         </div>
     </div>
