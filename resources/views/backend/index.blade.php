@@ -28,7 +28,7 @@
                             <a href="#" class="btn-block btn-lg btn-primary">Check custom plan requests.</a><br>
                             <a href="{{route('package.index')}}" class="btn-block btn-lg btn-primary">Check package
                                 requests.</a><br>
-                            <a href="#" class="btn-block btn-lg btn-primary">Check guest messages.</a><br>
+                            <a href="{{route('message.index')}}" class="btn-block btn-lg btn-primary">Check guest messages.</a><br>
 
                         </div>
                     </div>

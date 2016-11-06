@@ -98,12 +98,15 @@
                 <div class="col-md-6">
                     @foreach($places as $place)
                         <div class="col-md-6 col-sm-12">
-                            <a href="{{url('show/' . $place->id)}}" class="thumbnail animated flipInY"
-                               style="background-color: lightyellow">
+                            <div class="thumbnail animated flipInX"
+                                 style="background-color: lightyellow;">
                                 <p class="text-center">{{$place->title}}</p>
-                                <img src="{{url($place->thumbnail->name)}}"
-                                     style="width:300px;height:auto">
-                            </a>
+                                <a href="{{url('show/' . $place->id)}}">
+                                    <img src="{{url($place->thumbnail->name)}}" class="img-responsive "
+                                         style="width:300px;height:auto">
+                                </a>
+                            </div>
+
                         </div>
                     @endforeach
 

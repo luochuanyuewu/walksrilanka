@@ -19,9 +19,7 @@
                                 class="fa fa-home"></span>Package Requests</a>
                 </li>
 
-                <li class=""><a href="{{route('unisharp.lfm.show')}}" class="animated"><span
-                                class="fa fa-home"></span>File Manager</a>
-                </li>
+
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Articles
@@ -44,6 +42,13 @@
                     </ul>
                 </li>
 
+                <li class=""><a href="{{route('unisharp.lfm.show')}}"><span
+                                class="fa fa-home"></span>File Manager</a>
+                </li>
+
+                <li class=""><a href="{{route('message.index')}}"><span
+                                class="fa fa-comment"></span>Feedbacks</a>
+                </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contacter
                         <span class="caret"></span></a>

@@ -44,6 +44,8 @@ Route::group(['namespace' => 'Frontend'], function () {
 
 
 Route::post('packageRequest',['as'=>'request.store','uses'=>'Backend\PackageController@store']);
+Route::post('messageFeedback',['as'=>'feedback.store','uses'=>'Backend\MessageController@store']);
+
 
 
 //需要登录后才能访问的界面
@@ -71,6 +73,9 @@ Route::group(['prefix' => 'backend', 'namespace' => 'Backend', 'middleware' => [
     //套餐资源
     Route::resource('package','PackageController');
 
+    //反馈资源
+    Route::resource('message','MessageController');
+
 
 
 });
@@ -80,12 +85,4 @@ Route::group(['prefix' => 'backend', 'namespace' => 'Backend', 'middleware' => [
 Route::get('login', ['prefix' => 'backend', 'as' => 'backend.login', 'uses' => 'Backend\BackendLoginController@Index']);
 Route::post('login', ['prefix' => 'backend', 'as' => 'backend.login', 'uses' => 'Backend\BackendLoginController@Login']);
 
-
-Route::get('test',function (){
-    $packages = Category::find(1)->articles()->pluck('title')->all();
-    $categories = Category::pluck('name', 'id')->all();
-
-    return $packages;
-    return $categories;
-});
 

@@ -12,7 +12,7 @@
     <div class="row">
         @foreach($articles as $article)
             <div class="col-md-4 col-sm-6">
-                <div class="text-center animated tada thumbnail" style="background-color: lightyellow">
+                <div class="text-center animated tada thumbnail" style="background-color: lightyellow;">
                     <a href="{{url('show/' . $article->id)}}"><img src="{{url($article->thumbnail->name)}}"
                                                                    width="400" height="300"
                                                                    class="img-responsive "></a>

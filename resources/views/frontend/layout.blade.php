@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{{url('css/app.css')}}">
 
 
-
     <link rel="stylesheet" href="{{url('vendor/scrollToTop/css/totop.css')}}">
     <link rel="stylesheet" href="{{url('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
@@ -32,9 +31,9 @@
 <body style="background-color: lightgoldenrodyellow">
 
 <div class="container">
-    @include('frontend.includes.navigation')
 
     <div class="row">
+        @include('frontend.includes.navigation')
         <div class="col-sm-9">
             @include('frontend.includes.sideshow')
             @yield('content')
@@ -52,19 +51,18 @@
 
 
     @include('frontend.includes.footer')
-
+    @include('frontend.includes.feedbackBox')
 
 </div>
 
 
 <script src="{{url('js/app.js')}}"></script>
 
-
 <script src="{{url('vendor/scrollToTop/js/jquery.totop.js')}}"></script>
 
 <script>
-    $(function(){
-        $('#totopscroller').totopscroller({link:'http://www.sanbusililanka.com'});
+    $(function () {
+        $('#totopscroller').totopscroller({link: 'http://www.sanbusililanka.com'});
     })
 </script>
 
