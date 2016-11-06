@@ -1,8 +1,6 @@
 @extends('frontend.layout')
 
 @section('content')
-    <div class="">
-
         {{--介绍部分--}}
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1">
@@ -123,14 +121,4 @@
             </div>
         </div>
         <hr>
-
-    </div>
-
-
-
-
-
-
-
-
 @endsection

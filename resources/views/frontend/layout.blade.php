@@ -30,10 +30,13 @@
 </head>
 <body style="background-color: lightgoldenrodyellow">
 
-<div class="container">
 
+<div class="container">
     <div class="row">
         @include('frontend.includes.navigation')
+    </div>
+
+    <div class="row">
         <div class="col-sm-9">
             @include('frontend.includes.sideshow')
             @yield('content')

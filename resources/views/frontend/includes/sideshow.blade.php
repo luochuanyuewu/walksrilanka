@@ -1,4 +1,4 @@
-<div id="myCarousel" class="carousel slide animated fadeIn" data-ride="carousel" data-pause="hover" data-interval="3000">
+<div id="myCarousel" class="carousel slide animated fadeIn" data-ride="carousel" data-pause="hover" data-interval="3000" style="padding: 0px">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

@@ -1,5 +1,4 @@
 <div class="panel-group " id="rightsidePanel">
-
     {{--公众号--}}
     <div class="panel panel-success animated fadeInRight">
         <div class="panel-heading">

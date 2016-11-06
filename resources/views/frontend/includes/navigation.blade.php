@@ -1,6 +1,4 @@
-<div class="container">
-
-    <nav class="navbar navbar-default navbar-inverse " style="margin-bottom: 5px">
+    <nav class="navbar navbar-default navbar-inverse " style="margin-bottom: 6px;border-radius: 2px" >
         <div class="navbar-header">
             <a href="{{url('/')}}"><img src="{{asset('img_frontend/siteLogo.png')}}" alt="散步斯里兰卡"
                                         style="padding: 5px 5px;" class="navbar-brand animated rubberBand"></a>
@@ -38,4 +36,3 @@
         </div>
 
     </nav>
-</div>
