@@ -11,11 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //管理员Seeder
-        \App\User::create(['name'=>'Hi!Manager','email'=>'luochuanyuewu@qq.com','password'=>encrypt('luochuanyuewu')]);
-
-
         // $this->call(UsersTableSeeder::class);
+        $this->call(User_Seeder::class);
         $this->call(Category_Seeder::class);
         $this->call(Contacter_Seeder::class);
         $this->call(Setting_Seeder::class);
