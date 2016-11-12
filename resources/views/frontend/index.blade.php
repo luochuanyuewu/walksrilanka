@@ -69,12 +69,11 @@
                     斯里兰卡是一个拥有金色的沙滩和湛蓝的海水的美丽热带岛屿。我们的国家因丰富多样的文化而得名,我们国家的美丽风景以及悠久的历史文化可以追溯到公元前543年。
                 </p>
                 <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;想要旅行斯里兰卡的游客们,有丰富多彩的活动可以进行选择,比如慵懒地躺在
-                    观光斯里兰卡的游客们可以在丰富多彩的活动中选择自己想要的,从慵懒地躺在沙滩上享受阳光的沐浴到在珊瑚礁周围潜水,从观察野生动物到探索古代寺庙或废墟。
-                    只有您能想到到,没有您做不到到。
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;想要旅行斯里兰卡的游客们,观光斯里兰卡的游客们可以在丰富多彩的活动中选择自己喜欢的项目,从慵懒地躺在沙滩上享受阳光的沐浴到在珊瑚礁周围潜水,从观察野生动物到探索古代寺庙或废墟。
+                    只有您能想到,没有您做不到。
                 </p>
                 <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;赶紧前往斯里兰卡,体验这场迷人到旅行,这些美好的记忆将会伴随您一生!
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;赶紧前往斯里兰卡,体验这场迷人的旅行,这些美好的记忆将会伴随您一生!
                 </p>
 
             </div>
@@ -120,5 +119,32 @@
                 <a href="{{url('places')}}" class="btn btn-success" role="button">查看所有景点</a>
             </div>
         </div>
+        <hr>
+
+        {{--最新活动部分--}}
+        <div>
+            <div class="row ">
+                <h2 class="text-center animated fadeInLeft">最新活动项目</h2>
+                @foreach($activities as $activity)
+                    <div class="col-md-4">
+                        <div class="thumbnail animated flipInX"
+                             style="background-color: lightyellow">
+                            <p class="text-center">{{$activity->title}}</p>
+                            <a href="{{url('show/' . $activity->id)}}">
+                                <img src="{{url($activity->thumbnail->name)}}" class="img-responsive "
+                                     style="width:300px;height:225px">
+                            </a>
+                        </div>
+
+                    </div>
+                @endforeach
+
+            </div>
+            <br>
+            <div class="row text-center">
+                <a href="{{url('activities')}}" class="btn btn-success" role="button">查看所有项目</a>
+            </div>
+        </div>
+
         <hr>
 @endsection

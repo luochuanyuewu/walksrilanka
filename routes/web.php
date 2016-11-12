@@ -17,8 +17,8 @@ use App\Category;
 Route::get('/', function () {
     $packages = Article::latest()->where('category_id', 1)->take(3)->get();
     $places = Article::latest()->where('category_id',2)->take(6)->get();
-//    return $packages;
-    return view('frontend.index', compact('packages','places'));
+    $activities = Article::latest()->where('category_id',3)->take(3)->get();
+    return view('frontend.index', compact('packages','places','activities'));
 });
 
 Route::get('visa', function () {
