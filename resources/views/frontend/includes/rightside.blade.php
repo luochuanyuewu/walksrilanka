@@ -5,7 +5,7 @@
             <h4 class="">关注我们(微信)</h4>
         </div>
         <div class="panel-body" style="background-color: lightyellow;padding: 3px">
-            <img src="{{url('img_frontend/rightside/wechat.png')}}" alt="微信公众号" class="text-center img-responsive
+            <img src="{{url('img_frontend/rightside/WeChat.jpg')}}" alt="微信公众号" class="text-center img-responsive
 "
                  style="max-width:100%">
         </div>

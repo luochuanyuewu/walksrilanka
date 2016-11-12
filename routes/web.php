@@ -21,8 +21,8 @@ Route::get('/', function () {
     return view('frontend.index', compact('packages','places'));
 });
 
-Route::get('aboutsrilanka', function () {
-    return view('frontend.aboutSriLanka');
+Route::get('visa', function () {
+    return view('frontend.pages.visa');
 });
 
 Route::group(['namespace' => 'Frontend'], function () {
