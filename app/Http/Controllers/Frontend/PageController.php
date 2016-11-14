@@ -66,6 +66,10 @@ class PageController extends Controller
     public function ArticleShow($id)
     {
         $article = Article::find($id);
+
+        if(!$article)
+            abort(404);
+
         $pictures = $article->pictures;
         return view('frontend.pages.show', compact('article', 'pictures'));
     }

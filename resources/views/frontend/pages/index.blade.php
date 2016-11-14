@@ -1,6 +1,10 @@
 @extends('frontend.layout')
 @section('content')
     <div class="row">
+        @include('frontend.includes.sideshow')
+    </div>
+
+    <div class="row">
         <div class="text-center">
             <h2>{{$page_title}}</h2>
             <p>{{$page_description}}</p>
