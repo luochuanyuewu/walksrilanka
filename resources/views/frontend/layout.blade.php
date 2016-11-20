@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{url('vendor/scrollToTop/css/totop.css')}}">
     <link rel="stylesheet" href="{{url('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{url('css/font-awesome.min.css')}}">
-
+    <link rel="stylesheet" href="{{url('css/blueimp-gallery.min.css')}}">
 
     <style>
         .article-carousel-inner > .item > img,
@@ -57,6 +57,17 @@
 
 </div>
 
+<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
 
 <script src="{{url('js/app.js')}}"></script>
 
@@ -66,6 +77,19 @@
     $(function () {
         $('#totopscroller').totopscroller({link: 'http://www.sanbusililanka.com'});
     })
+</script>
+
+<script src="{{url('js/blueimp-gallery.min.js')}}"></script>
+
+<script>
+    document.getElementById('article-gallery').onclick = function (event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+                link = target.src ? target.parentNode : target,
+                options = {index: link, event: event},
+                links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
+    };
 </script>
 
 

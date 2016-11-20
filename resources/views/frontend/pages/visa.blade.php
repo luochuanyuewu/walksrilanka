@@ -1,6 +1,6 @@
 @extends('frontend.layout')
 @section('content')
-    <h2 class="text-center"><strong>签证申请</strong></h2>
+    <h2 class="text-center animated fadeInLeft"><strong>签证申请</strong></h2>
 
     <h3 style="color:#aaa; font-style:italic">&nbsp;</h3>
 

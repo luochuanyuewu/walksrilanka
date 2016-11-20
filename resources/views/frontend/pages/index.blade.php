@@ -1,8 +1,5 @@
 @extends('frontend.layout')
 @section('content')
-    <div class="row">
-        @include('frontend.includes.sideshow')
-    </div>
 
     <div class="row">
         <div class="text-center">
@@ -10,8 +7,6 @@
             <p>{{$page_description}}</p>
         </div>
     </div>
-
-
 
     <div class="row">
         @foreach($articles as $article)
