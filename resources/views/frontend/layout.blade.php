@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>散步斯里兰卡</title>
+    <title>散步斯里兰卡 ｜ 斯里兰卡 旅游 旅行 度假 假日 活动 应有尽有！</title>
 
     <meta name="description"
           content="你拥有无比的好奇心,想要体验生活中最大的乐趣吗?那么欢迎大家来到斯
