@@ -8,8 +8,9 @@
     <title>散步斯里兰卡</title>
 
     <meta name="description"
-          content="{{Setting::get('Site.Description','Site Description')}}"/>
-    <meta name="keywords" content="{{Setting::get('Site.Keywords','Site Keywords')}}"/>
+          content="你拥有无比的好奇心,想要体验生活中最大的乐趣吗?那么欢迎大家来到斯
+        里兰卡。在这里,名胜古迹,美丽的风景,激流壮阔的海浪,舒适的的气候和天气,特色的美食等等应有尽有。在这里你什么都能看到。。而我们,则希望给你们带来最美好的生活体验。"/>
+    <meta name="keywords" content="sanbusililanka, 旅游, 斯里兰卡, 散步, 旅行社, 美丽的地方, travel sri lanka, 锡兰, 旅游斯里兰卡,散步斯里兰卡, 宾馆, 风景"/>
 
 
     <link rel="stylesheet" href="{{url('css/app.css')}}">
@@ -91,6 +92,11 @@
         blueimp.Gallery(links, options);
     };
 </script>
+
+
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
 
 
 </body>
