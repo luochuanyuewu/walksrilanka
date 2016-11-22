@@ -29,7 +29,7 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <span style="display: block;line-height: 50px">
-            2016~至今 散步斯里兰卡 | 版权所有
+            2016~至今 散步斯里兰卡 | 版权所有 | 渝ICP备16000719号
             </span>
         </div>
     </div>

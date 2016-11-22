@@ -71,7 +71,7 @@
 
                 <li><strong>公司成立时间：</strong>2016年8月1日<br>
                 </li>
-                <li><strong>网站备案信息：</strong>待更新<br>
+                <li><strong>网站备案信息：</strong>渝ICP备16000719号<br>
                 </li>
             </ul>
         </div>

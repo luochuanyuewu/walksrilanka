@@ -29,13 +29,14 @@
                             class="fa fa-plane"></span> 旅游套餐</a>
             </li>
 
+            <li><a href="{{url('visa')}}" class="animated"><span
+                            class="fa  fa-info-circle"></span> 旅游签证</a>
+            </li>
+
             <li><a href="{{url('contacters')}}" class="animated"><span
                             class="fa fa-address-book"></span> 联系订购</a>
             </li>
 
-            <li><a href="{{url('visa')}}" class="animated"><span
-                            class="fa  fa-info-circle"></span> 旅游签证</a>
-            </li>
 
         </ul>
     </div>
